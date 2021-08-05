@@ -16,6 +16,15 @@
     background-color: #fff;
 }
 
+.login{
+    height: 350px;
+}
+
+.check{
+    font-size: 12px;
+    transition: all ease-in-out 0.5s;
+}
+
 .sign-up-left{
     height: 100%;
     width: 40%;
@@ -25,6 +34,15 @@
     height: 100%;
     width: 60%;
     background: url(./img/sign.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.back2{
+    height: 100%;
+    width: 60%;
+    background: url(./img/hand.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -89,14 +107,12 @@
 @media only screen and (max-width:720px){
     .signup-content{
         width: 600px;
-        height: 450px;
     }
 }
 
 @media only screen and (max-width:610px){
     .signup-content{
         width: 500px;
-        height: 450px;
     }
 
     .sign-up-left{
@@ -113,7 +129,6 @@
 @media only screen and (max-width:520px){
     .signup-content{
         width: 400px;
-        height: 450px;
     }
 
     .sign-up-form-group input{
@@ -143,7 +158,6 @@
 
     .signup-content{
         width: 350px;
-        height: 450px;
     }
 
     .sign-up-form-group input{

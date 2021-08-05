@@ -1,14 +1,14 @@
 import React,{Fragment} from 'react'
+import '../../signup.css'
 import { Link } from 'react-router-dom'
 import Navbar from '../reuseables/Navbar'
-import '../../signup.css'
 
-const Signup = () => {
+const Login = () => {
     return (
         <Fragment>
             <Navbar/>
             <div className="signup">
-                <div className="signup-content">
+                <div className="signup-content login">
                     <div className="sign-up-left">
                         <form className="sign-up-form">
                             <div className="sign-up-form-head">
@@ -17,34 +17,25 @@ const Signup = () => {
                             </div>
                             <div className="sign-up-form-group">
                                 <input type="text" name="username" placeholder="Username"/>
-                            </div>
-                            <div className="sign-up-form-group">
-                                <input type="email" name="email" placeholder="E-mail"/>
-                            </div>
-                            <div className="sign-up-form-group">
-                                <input type="text" name="number" placeholder="Number"/>
-                            </div>
+                            </div>                                                  
                             <div className="sign-up-form-group">
                                 <input type="password" name="password" placeholder="Password"/>
                             </div>
-                            <div className="sign-up-form-group">
-                                <input type="password" name="password2" placeholder="Confirm Password"/>
-                            </div>
                             <div className="Sign-up-info">
-                                <Link to="/login">
-                                    <a className="check">Already have an Account? Login</a>
+                                <Link to="/signup">
+                                    <a className="check">Do not have an Account? Signup</a>
                                 </Link>
-                            </div>
+                            </div>                          
                             <div className="sign-up-btn">
-                                <button type="submit">Sign Up</button>
+                                <button type="submit">Login</button>
                             </div>
                         </form>
                     </div>
-                    <div className="sign-up-right"></div>
+                    <div className="sign-up-right back2"></div>
                 </div>
             </div>
         </Fragment>
     )
 }
 
-export default Signup
+export default Login
