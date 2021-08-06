@@ -49,6 +49,7 @@
     width: 280px;
     box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
     padding: 20px 10px;
+    height: 100vh;
 }
 
 .side-header{
@@ -118,24 +119,31 @@
 .Eventstat{
     background-color: #fff;
     width: 320px;
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    box-shadow: rgba(107, 99, 99, 0.16) 0px 1px 4px;
+}
+
+.event-content{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    height: 100%;
+    width: 290px;
+    margin: auto;
 }
 
 .Eventstat i{
     font-size:20px;
 }
 
-.stat1,
-.stat2{
+.stat1
+{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 290px;
 }
 
-.stat1 i,
-.stat2 i{
+.stat1 i{
     margin-right: 20px;
     font-size: 20px;
 }
@@ -179,6 +187,7 @@ canvas{
     box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
     width: 480px;
     height: 420px;
+    margin-bottom: 20px;
 }
 
 .event-form-header{
@@ -218,6 +227,374 @@ canvas{
 
 .event-btn button:hover{
     background-color: rgb(139, 139, 139);
+}
+
+/*payment log*/
+.payment{
+    background-color: #fff;
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.payment-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: #ccc 1px solid;
+}
+
+.payment-body{
+    width: 670px;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 5px;
+}
+
+.table-head{
+    display: flex;
+    justify-content: space-between;
+    width: 650px;
+    margin: auto;
+}
+
+.table-head li{
+    font-weight: bold;
+}
+
+.table-content .table-content-list{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    background-color: #ccc;
+    padding: 10px 5px;
+    border-left: #222 5px solid;
+    margin-bottom: 20px;
+}
+
+.table-content .table-content-list li{
+    font-size: 14px;
+}
+
+/*Users*/
+.users{
+    background-color: #fff;
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    width: 700px; 
+    margin: auto;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+}
+
+.user-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: #ccc 1px solid;
+}
+
+.user-table-head{
+    display: flex;
+    justify-content: space-between;
+    width: 670px;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+.user-table-body .user-body-content{
+    display: flex;
+    justify-content: space-between;
+    width: 670px;
+    margin: auto;
+    background-color: #ccc;
+    border-left: #222 5px solid;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+}
+
+.user-table-head li{
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width:1200px){
+    .stat{
+        width: 240px;
+    }
+
+    .stat1
+    {
+        width: 200px;
+    }
+
+    .Eventstat{
+        width: 240px;
+    }
+    
+    .event-content{
+        width: 200px;
+    }
+
+    .stat-box-content{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap:5px;
+        width: 750px;
+        margin: auto;
+    }
+
+    .chart{
+        width: 350px;
+        height: 350px;
+    }
+
+    .events-stat-flex{
+        width: 750px;
+        margin: auto;
+    }
+
+    canvas{
+        height: 300px !important;
+        width: 300px !important;
+    }
+
+    .event-form{
+        width: 480px;
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width:1000px){
+   .stat-box-content{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap:5px;
+        width: 500px;
+        margin: auto;
+    }
+
+    .Eventstat{
+        width: 240px;
+        height: 90px;
+    }
+
+    .events-stat-flex{
+        width: 500px;
+        margin: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chart{
+        width: 480px;
+        height: 350px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width:960px){
+    .payment{
+        width: 480px;
+    }
+
+    .table-head{
+        width: 450px;
+    }
+
+    .payment-body{
+        width: 450px;
+    }
+
+    .users{
+        width: 450px; 
+    }
+
+    .user-table-head{
+        width: 400px;
+    }
+
+    .user-table-body .user-body-content{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width:690px){
+    .stat{
+        width: 180px;
+        height: 120px;
+    }
+
+    .stat-box-content{
+        grid-template-columns: repeat(2,1fr);
+        width: 400px;
+    }
+
+    .chart{
+        width: 380px;
+    }
+
+    .events-stat-flex{
+        width: 380px;
+    }
+
+    .event-form{
+        width: 380px;
+        height: 350px;
+    }
+
+    .Eventstat{
+        width: 180px;
+        height: 150px;
+    }
+
+    .stat1
+    {
+        width: 120px;
+    }
+
+    .Eventstat{
+        width: 180px;
+        height: 150px;
+    }
+
+    .event-content{
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width:675px){
+    .payment{
+        width: 380px;
+    }
+
+    .payment-body{
+        width: 350px;
+    }
+
+    .table-head{
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width:670px){
+    .users{
+        width: 380px; 
+    }
+
+    .user-table-head{
+        width: 350px;
+    }
+
+    .user-table-body .user-body-content{
+        width: 350px;
+    }
+
+    .user-table-body .user-body-content li{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .stat-box-content{
+        grid-template-columns: repeat(2,1fr);
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width:560px){
+    .stat p,
+    .event-content p{
+        font-size: 14px;
+    }
+
+    .stat{
+        width: 130px;
+        height: 100px;
+    }
+
+    .stat1
+    {
+        width: 100px;
+    }
+
+    .Eventstat{
+        width: 130px;
+        height: 100px;
+    }
+
+    .stat-box-content{
+        grid-template-columns: repeat(2,1fr);
+        width: 270px;
+    }
+
+    .chart{
+        width: 270px;
+        height: 280px;
+    }
+
+    .events-stat-flex{
+        width: 270px;
+    }
+
+    canvas{
+        height: 270px !important;
+        width: 270px !important;
+    }
+
+    .events-form .event-form-group input{
+        width: 250px;
+    }
+
+    .event-form{
+        width: 270px;
+        height: 350px;
+    }
+
+    .payment{
+        width: 270px;
+    }
+
+    .dis{
+        display: none;
+    }
+
+    .payment-body{
+        width: 250px;
+    }
+
+    .table-head{
+        width: 250px;
+    }
+
+    .users{
+        width: 270px; 
+    }
+
+    .user-table-head{
+        width: 250px;
+    }
+
+    .user-table-body .user-body-content{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width:450px){
+    .admin-header{
+        margin-bottom: 0px;
+    }
+
+    .adminSidebar{
+        background-color: #fff;
+        color: #222;
+        width: 280px;
+        box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+        padding: 20px 10px;
+        display: none;
+    }
 }
 
 @media only screen and (max-width:370px){

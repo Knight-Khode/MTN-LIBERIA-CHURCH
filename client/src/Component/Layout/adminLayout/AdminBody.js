@@ -2,6 +2,8 @@ import React from 'react'
 import StatBox from './StatBox'
 import Chart from './Chart'
 import Events from './Events'
+import Payment from './Payment'
+import Users from './Users'
 
 const AdminBody = () => {
     return (
@@ -11,6 +13,8 @@ const AdminBody = () => {
                 <Chart/>
                 <Events/>
             </div>
+           <Payment/>
+           <Users/>
         </div>
     )
 }
