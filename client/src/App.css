@@ -18,6 +18,15 @@ html,body{
   width: 100%;
 }
 
+.nav-logo{
+  width: 100px;
+}
+
+.nav-logo img{
+  width: 100px;
+  object-fit: cover;
+}
+
 a{
   text-decoration: none;
 }

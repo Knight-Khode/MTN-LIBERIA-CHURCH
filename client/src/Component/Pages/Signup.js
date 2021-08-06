@@ -16,6 +16,9 @@ const Signup = () => {
                                 <i className="fas fa-user-plus"></i>
                             </div>
                             <div className="sign-up-form-group">
+                                <input type="text" name="fullName" placeholder="Full name"/>
+                            </div>
+                            <div className="sign-up-form-group">
                                 <input type="text" name="username" placeholder="Username"/>
                             </div>
                             <div className="sign-up-form-group">

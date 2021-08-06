@@ -2,14 +2,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
     width: 100vw;
     background-color:#f9fafc;
 }
 
+.adminLogin{
+    height: 90vh;
+}
+
+.userLogin{
+    height: 90vh;
+}
+
 .signup-content{
     width: 700px;
-    height: 500px;
+    height: 530px;
     margin: auto;
     box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
     display: flex;

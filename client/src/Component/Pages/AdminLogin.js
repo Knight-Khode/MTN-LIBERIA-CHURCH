@@ -1,18 +1,16 @@
 import React,{Fragment} from 'react'
-import '../../signup.css'
-import { Link } from 'react-router-dom'
 import Navbar from '../reuseables/Navbar'
 
-const Login = () => {
+const AdminLogin = () => {
     return (
         <Fragment>
             <Navbar/>
-            <div className="signup userLogin">
+            <div className="signup adminLogin">
                 <div className="signup-content login">
                     <div className="sign-up-left">
                         <form className="sign-up-form">
                             <div className="sign-up-form-head">
-                                <h1>Sign Up</h1>
+                                <h2>Admin Login</h2>
                                 <i className="fas fa-user-plus"></i>
                             </div>
                             <div className="sign-up-form-group">
@@ -20,12 +18,7 @@ const Login = () => {
                             </div>                                                  
                             <div className="sign-up-form-group">
                                 <input type="password" name="password" placeholder="Password"/>
-                            </div>
-                            <div className="Sign-up-info">
-                                <Link to="/signup">
-                                    <a className="check">Do not have an Account? Signup</a>
-                                </Link>
-                            </div>                          
+                            </div>                        
                             <div className="sign-up-btn">
                                 <button type="submit">Login</button>
                             </div>
@@ -38,4 +31,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default AdminLogin

@@ -1,12 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import logo from "../../img/logo.jpeg"
 
 const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="nav-content">
                 <div className="nav-logo">
-                    logo
+                    <img src={logo}/>
                 </div>
                 <div className="nav-links">
                     <Link to="/" className="nav-margin">
@@ -16,10 +17,10 @@ const Navbar = () => {
                         <button className="dropbtn">Login
                         </button>
                         <div className="dropdown-content">
-                            <Link to='/user'>
+                            <Link to='/login'>
                                 <a>Subscriber</a>
                             </Link>
-                            <Link to='/admin'>
+                            <Link to='/adminLogin'>
                                 <a>Admin</a>
                             </Link>
                         </div>
