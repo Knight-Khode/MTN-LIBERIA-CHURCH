@@ -1,6 +1,8 @@
 import {
     VIEW_PAYMENT,
-    VIEW_USERS
+    VIEW_USERS,
+    ADMIN_LOGIN_FAIL,
+    ADMIN_LOGIN_SUCCESS
 } from '../types'
 
 export default (state,action)=>{
@@ -16,6 +18,18 @@ export default (state,action)=>{
                 ...state,
                 ...action.payload,
                 viewUsers:action.payload
+            }
+        case ADMIN_LOGIN_SUCCESS:
+            return{
+                ...state,
+                ...action.payload,
+                isAuthenticated:true
+            }
+        case ADMIN_LOGIN_FAIL:
+            return{
+                ...state,
+                isAuthenticated:false,
+                error:action.payload
             }
         default:
             return state
