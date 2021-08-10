@@ -1,4 +1,4 @@
-import React,{Fragment,useState,useContext} from 'react'
+import React,{Fragment,useState,useContext,useEffect} from 'react'
 import AuthContext from '../../context/auth/authContext'
 import { Link } from 'react-router-dom'
 import Navbar from '../reuseables/Navbar'
@@ -6,7 +6,13 @@ import '../../signup.css'
 
 const Signup = (props) => {
     const authContext = useContext(AuthContext)
-    const {register} = authContext
+    const {register,isAuthenticated} = authContext
+
+    useEffect(()=>{
+        if(isAuthenticated){
+            props.history.push('/user')
+        }
+    },[isAuthenticated,props.history])
 
     const [user,setUser] = useState({
         fullName:'',

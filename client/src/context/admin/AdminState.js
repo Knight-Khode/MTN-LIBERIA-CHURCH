@@ -5,7 +5,8 @@ import {
     VIEW_PAYMENT,
     VIEW_USERS,
     ADMIN_LOGIN_FAIL,
-    ADMIN_LOGIN_SUCCESS
+    ADMIN_LOGIN_SUCCESS,
+    LOGOUT
 } from '../types'
 
 const AdminState = (props) => {
@@ -60,6 +61,13 @@ const AdminState = (props) => {
         }
     }
 
+    //Logout User
+    const logout = ()=>{
+        dispatch({
+            type:LOGOUT
+        })
+    }
+
     return (
         <adminContext.Provider value={{
             defaultClass:state.defaultClass,
@@ -68,7 +76,8 @@ const AdminState = (props) => {
             error:state.error,
             changeClass,
             changeClass2,
-            adminLogin
+            adminLogin,
+            logout
         }}>
             {props.children}
         </adminContext.Provider>

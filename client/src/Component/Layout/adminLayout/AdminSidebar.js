@@ -4,7 +4,7 @@ import AdminContext from '../../../context/admin/adminContext'
 
 const AdminSidebar = () => {
     const adminContext = useContext(AdminContext)
-    const {changeClass,defaultClass,viewUsers,changeClass2} = adminContext
+    const {changeClass,defaultClass,viewUsers,changeClass2,logout} = adminContext
 
     const viewPayment = (e)=>{
         e.preventDefault()
@@ -22,6 +22,11 @@ const AdminSidebar = () => {
         }else{
             changeClass2("hide")
         }
+    }
+
+    const logOutAdmin = (e)=>{
+        e.preventDefault()
+        logout()
     }
 
     return (
@@ -51,7 +56,7 @@ const AdminSidebar = () => {
                 </li>
                 <li>
                     <i class="fas fa-sign-out-alt"></i>
-                    <a href="#" className="log-out-btn">
+                    <a href="#" className="log-out-btn" onClick={logOutAdmin}>
                         <p>Log Out</p>
                     </a>
                 </li>

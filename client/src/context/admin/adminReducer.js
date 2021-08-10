@@ -2,7 +2,8 @@ import {
     VIEW_PAYMENT,
     VIEW_USERS,
     ADMIN_LOGIN_FAIL,
-    ADMIN_LOGIN_SUCCESS
+    ADMIN_LOGIN_SUCCESS,
+    LOGOUT
 } from '../types'
 
 export default (state,action)=>{
@@ -25,6 +26,7 @@ export default (state,action)=>{
                 isAuthenticated2:true
             }
         case ADMIN_LOGIN_FAIL:
+        case LOGOUT:
             return{
                 ...state,
                 isAuthenticated2:false,
