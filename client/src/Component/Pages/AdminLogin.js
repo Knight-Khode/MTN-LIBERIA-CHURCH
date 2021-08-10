@@ -1,10 +1,18 @@
-import React,{Fragment,useState,useContext} from 'react'
+import React,{Fragment,useState,useContext,useEffect} from 'react'
 import AdminContext from '../../context/admin/adminContext'
 import Navbar from '../reuseables/Navbar'
+import { withRouter } from 'react-router'
 
-const AdminLogin = () => {
+const AdminLogin = (props) => {
     const adminContext = useContext(AdminContext)
-    const {adminLogin} = adminContext
+    const {adminLogin,isAuthenticated2} = adminContext
+    
+    useEffect(()=>{
+        
+        if(isAuthenticated2){
+            props.history.push('/admin')
+        }
+    },[isAuthenticated2,props.history])
 
     const [admin,setAdmin] = useState({
         username:'',
@@ -62,4 +70,4 @@ const AdminLogin = () => {
     )
 }
 
-export default AdminLogin
+export default withRouter(AdminLogin)

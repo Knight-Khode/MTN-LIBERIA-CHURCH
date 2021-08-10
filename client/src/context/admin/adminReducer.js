@@ -22,13 +22,12 @@ export default (state,action)=>{
         case ADMIN_LOGIN_SUCCESS:
             return{
                 ...state,
-                ...action.payload,
-                isAuthenticated:true
+                isAuthenticated2:true
             }
         case ADMIN_LOGIN_FAIL:
             return{
                 ...state,
-                isAuthenticated:false,
+                isAuthenticated2:false,
                 error:action.payload
             }
         default:

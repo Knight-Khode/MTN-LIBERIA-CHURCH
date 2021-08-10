@@ -1,12 +1,18 @@
-import React,{Fragment,useContext,useState} from 'react'
+import React,{Fragment,useContext,useState,useEffect} from 'react'
 import AuthContext from '../../context/auth/authContext'
 import '../../signup.css'
-import { Link } from 'react-router-dom'
+import { Link,withRouter } from 'react-router-dom'
 import Navbar from '../reuseables/Navbar'
 
 const Login = (props) => {
     const authContext = useContext(AuthContext)
-    const {login} = authContext
+    const {login,isAuthenticated} = authContext
+    
+    useEffect(()=>{
+        if(isAuthenticated){
+            props.history.push('/user')
+        }
+    },[isAuthenticated,props.history])
 
     const [user,setUser] = useState({
         username:'',
@@ -65,4 +71,4 @@ const Login = (props) => {
     )
 }
 
-export default Login
+export default withRouter(Login)

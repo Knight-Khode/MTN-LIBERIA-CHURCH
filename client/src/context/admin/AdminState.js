@@ -12,7 +12,7 @@ const AdminState = (props) => {
     const initialState={
         defaultClass:"hide",
         viewUsers:"hide",
-        isAuthenticated:null,
+        isAuthenticated2:null,
         error:null
     }
 
@@ -44,7 +44,7 @@ const AdminState = (props) => {
         try{
             //api call to login admin is made here
             //const res = await axios.post('api route goes here',formData,config)
-            console.log(formData)
+           
             dispatch({
                 type:ADMIN_LOGIN_SUCCESS
             })
@@ -64,7 +64,7 @@ const AdminState = (props) => {
         <adminContext.Provider value={{
             defaultClass:state.defaultClass,
             viewUsers:state.viewUsers,
-            isAuthenticated:state.isAuthenticated,
+            isAuthenticated2:state.isAuthenticated2,
             error:state.error,
             changeClass,
             changeClass2,
