@@ -40,7 +40,10 @@ ul{
   color: #fff;
   padding: 10px 0px;
   width: 100vw;
+  display: flex;
+  justify-content: space-between;
 }
+
 
 .navbar .nav-content{
   width: 95vw;
