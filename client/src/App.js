@@ -7,6 +7,7 @@ import Admin from './Component/Pages/Admin';
 import User from './Component/Pages/User';
 import AdminState from './context/admin/AdminState';
 import AuthState from './context/auth/AuthState';
+import UserState from './context/user/UserState';
 import PrivateRoute from './Component/routing/PrivateRoute';
 import PrivateRoute2 from './Component/routing/PrivateRoute2';
 import AdminLogin from './Component/Pages/AdminLogin';
@@ -16,16 +17,18 @@ function App() {
   return (
     <AuthState>
       <AdminState>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/signup" component={Signup}/>
-            <Route exact path="/login" component={Login}/>
-            <PrivateRoute exact path="/admin" component={Admin}/>
-            <Route exact path="/adminLogin" component={AdminLogin}/>
-            <PrivateRoute2 exact path="/user" component={User}/>
-          </Switch>
-        </Router>
+        <UserState>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/signup" component={Signup}/>
+              <Route exact path="/login" component={Login}/>
+              <PrivateRoute exact path="/admin" component={Admin}/>
+              <Route exact path="/adminLogin" component={AdminLogin}/>
+              <PrivateRoute2 exact path="/user" component={User}/>
+            </Switch>
+          </Router>
+        </UserState>
       </AdminState>
     </AuthState>
   );

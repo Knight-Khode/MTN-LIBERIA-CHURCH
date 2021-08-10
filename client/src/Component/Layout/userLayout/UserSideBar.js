@@ -1,6 +1,20 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { Link } from 'react-router-dom'
+import UserContext from '../../../context/user/userContext'
 
 const UserSideBar = () => {
+    const userContext = useContext(UserContext)
+    const {showBranch,showBranches} = userContext
+
+    const viewBranches = (e)=>{
+        e.preventDefault()
+        if(showBranches==="hide2"){
+            showBranch('show2')
+        }else{
+            showBranch('hide2')
+        }
+    }
+
     return (
         <div className="user-side-bar">
            <div className="user-side-bar-header">
@@ -13,11 +27,17 @@ const UserSideBar = () => {
                 <ul>
                     <li>
                         <i class="fas fa-church"></i>
-                        <a href="#">Choose Branch</a>
+                        <a href="#" onClick={viewBranches}>Choose Branch</a>
                     </li>
                     <li>
                         <i class="fas fa-money-check-alt"></i>
                         <a href="#">Make Payment</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <Link className="userHome" to="/">
+                            <a href="#">Home</a>                           
+                        </Link>
                     </li>
                     <li>
                         <i class="fas fa-sign-out-alt"></i>
