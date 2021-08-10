@@ -128,6 +128,56 @@
     margin-bottom: 20px;
 }
 
+/*usersidebar*/
+.userbody{
+    width: 95vw;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.user-side-bar{
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    width: 300px;
+}
+
+.user-side-bar-header{
+    background-color: rgb(250, 205, 3);
+}
+
+.user-side-bar-header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 270px;
+    margin: auto;
+    padding: 10px 0px;
+}
+
+.user-side-bar-body{
+    padding: 20px 0px 10px 0px;
+}
+
+.user-side-bar-body ul li{
+    background-color: rgb(250, 205, 3);
+    width: 270px;
+    margin: auto;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    
+}
+
+.user-side-bar-body ul li a{
+    transition: all ease-in-out 0.5s;
+}
+
+.user-side-bar-body ul li a:hover{
+    color: #fff;
+}
+
 @media only screen and (max-width:920px){
     .user-right-card{
         width: 300px;
@@ -179,10 +229,6 @@
 }
 
 @media only screen and (max-width:560px){
-    .user-right{
-        
-    }
-
     .user-showcase{
         height: 120vh;
     }
