@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import UserContext from '../../../context/user/userContext'
 
 const UserPayment = () => {
+    const userContext = useContext(UserContext)
+    const {showPayments} = userContext
+    
     return (
-        <div className="user-payment">
+        <div className={`user-payment ${showPayments}`}>
             <div className="user-payment-header">
                 <div className="user-payment-header-content">
                     <h4>Payments</h4>

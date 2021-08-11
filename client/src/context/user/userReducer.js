@@ -1,5 +1,6 @@
 import{
-    SHOW_BRANCHES
+    SHOW_BRANCHES,
+    SHOW_PAYMENT
 } from '../types'
 
 export default (state,action)=>{
@@ -9,6 +10,12 @@ export default (state,action)=>{
                 ...state,
                 ...action.payload,
                 showBranches:action.payload
+            }
+        case SHOW_PAYMENT:
+            return{
+                ...state,
+                ...action.payload,
+                showPayments:action.payload
             }
         default:
             return state

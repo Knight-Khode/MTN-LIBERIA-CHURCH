@@ -2,12 +2,14 @@ import React,{useReducer} from 'react'
 import userContext from './userContext'
 import userReducer from './userReducer'
 import {
-    SHOW_BRANCHES
+    SHOW_BRANCHES,
+    SHOW_PAYMENT
 }from '../types'
 
 const UserState = (props) => {
     const initialState={
         showBranches:"hide2",
+        showPayments:"hide2"
     }
 
     const [state,dispatch]=useReducer(userReducer,initialState)
@@ -19,10 +21,19 @@ const UserState = (props) => {
         })
     }
 
+    const showPayment = (text)=>{
+        dispatch({
+            type:SHOW_PAYMENT,
+            payload:text
+        })
+    }
+
     return (
         <userContext.Provider value={{
             showBranches:state.showBranches,
-            showBranch
+            showPayments:state.showPayments,
+            showBranch,
+            showPayment
         }}>
             {props.children}
         </userContext.Provider>

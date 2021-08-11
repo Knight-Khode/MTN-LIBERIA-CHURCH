@@ -4,7 +4,7 @@ import UserContext from '../../../context/user/userContext'
 
 const UserSideBar = () => {
     const userContext = useContext(UserContext)
-    const {showBranch,showBranches} = userContext
+    const {showBranch,showBranches,showPayment,showPayments} = userContext
 
     const viewBranches = (e)=>{
         e.preventDefault()
@@ -12,6 +12,15 @@ const UserSideBar = () => {
             showBranch('show2')
         }else{
             showBranch('hide2')
+        }
+    }
+
+    const viewPayments = (e)=>{
+        e.preventDefault()
+        if(showPayments==="hide2"){
+            showPayment('show2')
+        }else{
+            showPayment('hide2')
         }
     }
 
@@ -31,7 +40,7 @@ const UserSideBar = () => {
                     </li>
                     <li>
                         <i class="fas fa-money-check-alt"></i>
-                        <a href="#">Make Payment</a>
+                        <a href="#" onClick={viewPayments}>Make Payment</a>
                     </li>
                     <li>
                         <i class="fas fa-home"></i>
