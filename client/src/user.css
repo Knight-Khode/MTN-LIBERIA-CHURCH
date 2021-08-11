@@ -239,6 +239,105 @@
     display: block;
 }
 
+/*User Payment*/
+.user-payment{
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    width: 500px;
+    margin-right: 40px;
+}
+
+.user-payment-header{
+    background-color: rgb(250, 205, 3);
+}
+
+.user-payment-header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 470px;
+    margin: auto;
+    padding: 10px 0px;
+}
+
+.user-payment-body{
+    padding: 20px 0px;
+}
+
+.user-payment-body ul li{
+    background-color: rgb(250, 205, 3);
+    width: 470px;
+    margin: auto;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+}
+
+.user-payment-body ul .payment-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.top-content{
+    width: 470px;
+    display: flex;
+    align-items: center;
+}
+
+.top-content i{
+    margin-right: 40px;
+}
+
+.bottom-content{
+    width: 330px;
+}
+
+.bottom-content-control{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bottom-content-control i{
+    margin-right: 40px;
+}
+
+.top2{
+    padding-left: 10px;
+}
+
+.top2 p{
+    margin-bottom: 10px;
+}
+
+.top-content p{
+    font-weight: bold;
+}
+
+.pay-form-btn{
+    width: 470px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.pay-form-btn button{
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #222;
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+
+.pay-form-btn button:hover{
+    background-color: rgb(231, 231, 231);
+    color: #222;
+}
+
 @media only screen and (max-width:920px){
     .user-right-card{
         width: 300px;
