@@ -6,7 +6,7 @@ const UserShowcase = () => {
             <div className="user-overlay">
                 <div className="user-content">
                     <div className="user-left">
-                        <h1>SELECT</h1>
+                        <h2>SELECT</h2>
                         <h2>YOUR CHURCH BRANCH</h2>
                         <h3>AND LETS WORSHIP TOGETHER</h3>
                     </div>

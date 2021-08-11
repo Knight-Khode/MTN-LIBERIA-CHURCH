@@ -17,6 +17,9 @@ const UserNavbar = () => {
                         </Link>
                     </li>
                     <li>
+                        <a href="#">Hello Kwame</a>
+                    </li>
+                    <li>
                        <a href="#">
                            Logout
                            <i class="fas fa-sign-out-alt"></i>

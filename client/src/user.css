@@ -88,6 +88,11 @@
     font-size: 40px;
 }
 
+.user-right{
+    background-color: red;
+    margin: auto;
+}
+
 .user-right-card{
     background-color: rgb(218, 216, 216);
     width: 400px;
@@ -421,6 +426,11 @@
 
     .user-content h3{
         font-size: 30px;
+    }
+
+    .user-right{
+        background-color: red;
+        margin: unset;
     }
 }
 
