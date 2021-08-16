@@ -1,10 +1,11 @@
 import React from 'react'
+import heart from '../../../video/heart.mp4'
 
 const UserVideo = () => {
     return (
-        <div>
-            User video
-        </div>
+        <video width="450" height="340" controls autoPlay>
+            <source src={heart} type="video/mp4"/>   
+        </video>
     )
 }
 

@@ -6,6 +6,7 @@ import Branches from '../Layout/userLayout/Branches'
 import UserPayment from '../Layout/userLayout/UserPayment'
 import PaymentModal from '../Layout/userLayout/PaymentModal'
 import UserQuotation from '../Layout/userLayout/UserQuotation'
+import UserVideo from '../Layout/userLayout/UserVideo'
 
 const User = () => {
     return (
@@ -18,9 +19,10 @@ const User = () => {
                    <div className="body-flex">
                     <Branches/>
                     <UserPayment/>
+                    <PaymentModal/>
+                    <UserVideo/>
                    </div>
                 </div>
-                <PaymentModal/>
                 <UserQuotation/>
             </div>
         </div>
