@@ -427,6 +427,14 @@
 	width: 30%;
 }
 
+.body-flex {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	width: 900px;
+	margin: auto;
+}
+
 @media only screen and (max-width: 1000px) {
 	.modal-content {
 		width: 40%;

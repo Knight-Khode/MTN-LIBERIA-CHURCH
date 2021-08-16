@@ -1,10 +1,18 @@
 import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
 import UserContext from '../../../context/user/userContext'
+import AuthContext from '../../../context/auth/authContext'
 
 const UserSideBar = () => {
     const userContext = useContext(UserContext)
+    const authContext = useContext(AuthContext)
     const {showBranch,showBranches,showPayment,showPayments} = userContext
+    const {logout} = authContext
+
+    const onLogout = (e)=>{
+        e.preventDefault()
+        logout()
+    }
 
     const viewBranches = (e)=>{
         e.preventDefault()
@@ -50,7 +58,7 @@ const UserSideBar = () => {
                     </li>
                     <li>
                         <i class="fas fa-sign-out-alt"></i>
-                        <a href="#">Logout</a>
+                        <a href="#" onClick={onLogout}>Logout</a>
                     </li>
                 </ul>
            </div>

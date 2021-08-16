@@ -15,7 +15,7 @@ const UserState = (props) => {
         showBranches:"hide2",
         showPayments:"hide2",
         showModal:"hide2",
-        isPaid:false
+        isPaid:false,
     }
 
     const [state,dispatch]=useReducer(userReducer,initialState)
