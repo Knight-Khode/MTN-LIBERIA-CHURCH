@@ -250,6 +250,7 @@
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 	width: 500px;
 	margin-right: 40px;
+	margin-top: 70px;
 }
 
 .user-payment-header {
@@ -435,7 +436,42 @@
 	margin: auto;
 }
 
-/*Video*/
+/*Quotation*/
+.user-quotation {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	height: 370px;
+	width: 350px;
+	background-color: #fff;
+	margin-left: 40px;
+}
+
+.quotation-img img {
+	width: 350px;
+	object-fit: cover;
+}
+
+.user-quotation-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 320px;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.verse-chapter {
+	margin-bottom: 10px;
+}
+
+.verse-chapter p {
+	font-weight: bold;
+}
+
+.user-quotation-body {
+	width: 320px;
+	margin: auto;
+}
 
 @media only screen and (max-width: 1000px) {
 	.modal-content {
