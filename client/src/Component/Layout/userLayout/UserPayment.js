@@ -3,7 +3,14 @@ import UserContext from '../../../context/user/userContext'
 
 const UserPayment = () => {
     const userContext = useContext(UserContext)
-    const {showPayments} = userContext
+    const {showPayments,showModal,modal} = userContext
+
+    const onSubmit = (e)=>{
+        e.preventDefault()
+        if(showModal==="hide2"){
+            modal("show2")
+        }
+    }
     
     return (
         <div className={`user-payment ${showPayments}`}>
@@ -55,7 +62,7 @@ const UserPayment = () => {
                     </li>
                 </ul>
                 <div className="pay-form-btn">
-                    <button type="submit">Continue</button>
+                    <button type="submit" onClick={onSubmit}>Continue</button>
                 </div>
             </div>
         </div>

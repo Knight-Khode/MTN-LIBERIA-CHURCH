@@ -1,508 +1,608 @@
 /*Navbar*/
-.logo{
-    width: 120px;
-    height: 50px;
+.logo {
+	width: 120px;
+	height: 50px;
 }
 
-.logo img{
-    width:100%;
-    height:100%;
-    object-fit: cover;
+.logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-.user-nav{
-    width: 100vw;
-    background-color: rgb(250, 205, 3);
-    color: #fff;
-    padding: 10px 0px;
+.user-nav {
+	width: 100vw;
+	background-color: rgb(250, 205, 3);
+	color: #fff;
+	padding: 10px 0px;
 }
 
-.user-container{
-    max-width: 95vw;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.user-container {
+	max-width: 95vw;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.user-container ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.user-container ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.user-container ul li{
-    margin-right: 30px;
-}
-
-.user-container ul li i{
-    margin-left: 10px;
-    font-size: 20px;
+.user-container ul li {
+	margin-right: 30px;
 }
 
-.user-container ul li a{
-    transition: all ease-in-out 0.5s;
+.user-container ul li i {
+	margin-left: 10px;
+	font-size: 20px;
 }
 
-.user-container ul li a:hover{
-    color: #fff;
+.user-container ul li a {
+	transition: all ease-in-out 0.5s;
+}
+
+.user-container ul li a:hover {
+	color: #fff;
 }
 
 /*user-showcase*/
-.user-showcase{
-    background: url("./img//kisspng-worship-church-service-christian-church-pastor-event-5ab99d61ec12d8.966091981522113889967.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 90vh;
-    width: 100vw;
-    color: #fff;
-    position: relative;
-    margin-bottom: 70px;
+.user-showcase {
+	background: url('./img//kisspng-worship-church-service-christian-church-pastor-event-5ab99d61ec12d8.966091981522113889967.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 90vh;
+	width: 100vw;
+	color: #fff;
+	position: relative;
+	margin-bottom: 70px;
 }
 
-.user-overlay{
-    width: 100vw;
-    height: 90vh;
-    background-color: #000000ab;
-    position: absolute;
+.user-overlay {
+	width: 100vw;
+	height: 90vh;
+	background-color: #000000ab;
+	position: absolute;
 }
 
-.user-content{
-    width: 95vw;
-    margin: auto;
-    height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.user-content {
+	width: 95vw;
+	margin: auto;
+	height: 90vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.user-content h1{
-    font-size: 60px;
+.user-content h1 {
+	font-size: 60px;
 }
 
-.user-content h2{
-    font-size: 40px;
+.user-content h2 {
+	font-size: 40px;
 }
 
-.user-content h3{
-    font-size: 40px;
+.user-content h3 {
+	font-size: 40px;
 }
 
-.user-right{
-    background-color: red;
-    margin: auto;
+.user-right {
+	background-color: red;
+	margin: auto;
 }
 
-.user-right-card{
-    background-color: rgb(218, 216, 216);
-    width: 400px;
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
-    color: #222;
+.user-right-card {
+	background-color: rgb(218, 216, 216);
+	width: 400px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	color: #222;
 }
 
-.user-head{
-    background-color: rgb(250, 205, 3);
-    padding: 10px 0px;
-    color: rgb(253, 253, 253);
+.user-head {
+	background-color: rgb(250, 205, 3);
+	padding: 10px 0px;
+	color: rgb(253, 253, 253);
 }
 
-.user-head-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 370px;
-    margin: auto;
+.user-head-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 370px;
+	margin: auto;
 }
 
-.user-body{
-    padding: 20px 0px;
+.user-body {
+	padding: 20px 0px;
 }
 
-.user-body-item{
-    width: 370px;
-    margin: auto;
+.user-body-item {
+	width: 370px;
+	margin: auto;
 }
 
-.user-body-item .user-body-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(184, 176, 176);
-    padding: 5px 5px;
-    border-left: #222 5px solid;
-    margin-bottom: 20px;
+.user-body-item .user-body-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(184, 176, 176);
+	padding: 5px 5px;
+	border-left: #222 5px solid;
+	margin-bottom: 20px;
 }
 
 /*usersidebar*/
-.userbody{
-    width: 95vw;
-    margin: auto;
-    margin-bottom: 40px;
+.userbody {
+	width: 95vw;
+	margin: auto;
+	margin-bottom: 40px;
 }
 
-.user-side-bar{
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
-    width: 300px;
-    margin-right: 40px;
+.user-side-bar {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	width: 300px;
+	margin-right: 40px;
 }
 
-.user-side-bar-header{
-    background-color: rgb(250, 205, 3);
+.user-side-bar-header {
+	background-color: rgb(250, 205, 3);
 }
 
-.user-side-bar-header-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 270px;
-    margin: auto;
-    padding: 10px 0px;
+.user-side-bar-header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 270px;
+	margin: auto;
+	padding: 10px 0px;
 }
 
-.user-side-bar-body{
-    padding: 20px 0px 10px 0px;
+.user-side-bar-body {
+	padding: 20px 0px 10px 0px;
 }
 
-.user-side-bar-body ul li{
-    background-color: rgb(250, 205, 3);
-    width: 270px;
-    margin: auto;
-    padding: 10px 10px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+.user-side-bar-body ul li {
+	background-color: rgb(250, 205, 3);
+	width: 270px;
+	margin: auto;
+	padding: 10px 10px;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.user-side-bar-body ul li a{
-    transition: all ease-in-out 0.5s;
+.user-side-bar-body ul li a {
+	transition: all ease-in-out 0.5s;
 }
 
-.user-side-bar-body ul li a:hover{
-    color: #fff;
+.user-side-bar-body ul li a:hover {
+	color: #fff;
 }
 
-.userHome a{
-    color: blue;
+.userHome a {
+	color: blue;
 }
 
 /*churchbranches*/
-.userbody-flex{
-    display: flex;
-    align-items: center;
+.userbody-flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.branches{
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
-    width: 300px;
-    margin-right: 40px;
+.branches {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	width: 300px;
+	margin-right: 40px;
 }
 
-.branches-header{
-    background-color: rgb(250, 205, 3);
+.branches-header {
+	background-color: rgb(250, 205, 3);
 }
 
-.branches-header-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 270px;
-    margin: auto;
-    padding: 10px 0px;
+.branches-header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 270px;
+	margin: auto;
+	padding: 10px 0px;
 }
 
-.branches-body{
-    padding: 20px 0px 10px 0px;
+.branches-body {
+	padding: 20px 0px 10px 0px;
 }
 
-.branches-body ul li{
-    background-color: rgb(250, 205, 3);
-    width: 270px;
-    margin: auto;
-    padding: 10px 10px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+.branches-body ul li {
+	background-color: rgb(250, 205, 3);
+	width: 270px;
+	margin: auto;
+	padding: 10px 10px;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.branches-body ul li a{
-    transition: all ease-in-out 0.5s;
+.branches-body ul li a {
+	transition: all ease-in-out 0.5s;
 }
 
-.branches-body ul li a:hover{
-    color: #fff;
+.branches-body ul li a:hover {
+	color: #fff;
 }
 
-.hide2{
-    display: none;
+.hide2 {
+	display: none;
 }
 
-.show2{
-    display: block;
+.show2 {
+	display: block;
 }
 
 /*User Payment*/
-.user-payment{
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
-    width: 500px;
-    margin-right: 40px;
+.user-payment {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	width: 500px;
+	margin-right: 40px;
 }
 
-.user-payment-header{
-    background-color: rgb(250, 205, 3);
+.user-payment-header {
+	background-color: rgb(250, 205, 3);
 }
 
-.user-payment-header-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 470px;
-    margin: auto;
-    padding: 10px 0px;
+.user-payment-header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 470px;
+	margin: auto;
+	padding: 10px 0px;
 }
 
-.user-payment-body{
-    padding: 20px 0px;
+.user-payment-body {
+	padding: 20px 0px;
 }
 
-.user-payment-body ul li{
-    background-color: rgb(250, 205, 3);
-    width: 470px;
-    margin: auto;
-    padding: 10px 10px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+.user-payment-body ul li {
+	background-color: rgb(250, 205, 3);
+	width: 470px;
+	margin: auto;
+	padding: 10px 10px;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.user-payment-body ul .payment-info{
-    display: flex;
-    flex-direction: column;
+.user-payment-body ul .payment-info {
+	display: flex;
+	flex-direction: column;
 }
 
-.top-content{
-    width: 470px;
-    display: flex;
-    align-items: center;
+.top-content {
+	width: 470px;
+	display: flex;
+	align-items: center;
 }
 
-.top-content i{
-    margin-right: 40px;
+.top-content i {
+	margin-right: 40px;
 }
 
-.bottom-content{
-    width: 330px;
+.bottom-content {
+	width: 330px;
 }
 
-.bottom-content-control{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.bottom-content-control {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
-.bottom-content-control i{
-    margin-right: 40px;
+.bottom-content-control i {
+	margin-right: 40px;
 }
 
-.top2{
-    padding-left: 10px;
+.top2 {
+	padding-left: 10px;
 }
 
-.top2 p{
-    margin-bottom: 10px;
+.top2 p {
+	margin-bottom: 10px;
 }
 
-.top-content p{
-    font-weight: bold;
+.top-content p {
+	font-weight: bold;
 }
 
-.pay-form-btn{
-    width: 470px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+.pay-form-btn {
+	width: 470px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
 }
 
-.pay-form-btn button{
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    background-color: #222;
-    color: #fff;
-    transition: all ease-in-out 0.5s;
+.pay-form-btn button {
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #222;
+	color: #fff;
+	transition: all ease-in-out 0.5s;
 }
 
-.pay-form-btn button:hover{
-    background-color: rgb(231, 231, 231);
-    color: #222;
+.pay-form-btn button:hover {
+	background-color: rgb(231, 231, 231);
+	color: #222;
 }
 
-@media only screen and (max-width:920px){
-    .user-right-card{
-        width: 300px;
-    }
-
-    .user-head-content{
-        width: 270px;
-    }
-
-    .user-body-item{
-        width: 270px;
-    }
+/*Modal*/
+.modal {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
-@media only screen and (max-width:800px){
-    .user-left{
-        width: 350px;
-    }
-
-    .user-content h1{
-        font-size: 50px;
-    }
-
-    .user-content h2{
-        font-size: 30px;
-    }
-
-    .user-content h3{
-        font-size: 30px;
-    }
+.modal-content {
+	background-color: #fefefe;
+	margin: 8% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 35%;
 }
 
-@media only screen and (max-width:800px){
-    .user-left{
-        width: 270px;
-    }
-
-    .user-content h1{
-        font-size: 40px;
-    }
-
-    .user-content h2{
-        font-size: 25px;
-    }
-
-    .user-content h3{
-        font-size: 25px;
-    }
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
-@media only screen and (max-width:560px){
-    .user-showcase{
-        height: 120vh;
-    }
-
-    .user-content{
-        width: 95vw;
-        height: 120vh;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .user-left{
-        width: 95vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-
-    
-    .user-content h1{
-        font-size: 60px;
-    }
-
-    .user-content h2{
-        font-size: 30px;
-    }
-
-    .user-content h3{
-        font-size: 30px;
-    }
-
-    .user-right{
-        background-color: red;
-        margin: unset;
-    }
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
 
-@media only screen and (max-width:475px){
-    .user-content h1{
-        font-size: 50px;
-    }
-
-    .user-content h2{
-        font-size: 25px;
-    }
-
-    .user-content h3{
-        font-size: 25px;
-    }
+.modal-form {
+	margin-top: 40px;
 }
 
-@media only screen and (max-width:390px){
-    .user-content h1{
-        font-size: 40px;
-    }
-
-    .user-content h2{
-        font-size: 20px;
-    }
-
-    .user-content h3{
-        font-size: 20px;
-    }
+.modal-form .payment-form {
+	margin-bottom: 20px;
 }
 
-
-@media only screen and (max-width:360px){
-    .user-container{
-        flex-direction: column;
-    }
-
-    .logo{
-        margin-bottom: 10px;
-    }
+.modal-form .payment-form label {
+	display: block;
 }
 
-@media only screen and (max-width:310px){
-    .user-content h1{
-        font-size: 30px;
-    }
-
-    .user-content h2{
-        font-size: 18px;
-    }
-
-    .user-content h3{
-        font-size: 18px;
-    }
-
-    .user-right-card{
-        width: 250px;
-    }
-
-    .user-head-content{
-        width: 230px;
-    }
-
-    .user-body-item{
-        width: 230px;
-        font-size: 14px;
-    }
+.modal-form .payment-form input {
+	width: 90%;
+	padding: 5px 0px;
+	font-size: 16px;
 }
 
-@media only screen and (max-width:280px){
-    .user-left{
-        width: 95vw;
-        display: block;
-    }
+.modal-form .payment-form select {
+	width: 90%;
+	font-size: 16px;
+	padding: 5px 0px;
+}
+
+.modal-form .btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-form .btn button {
+	border: none;
+	background-color: #000;
+	color: #fff;
+	font-size: 18px;
+	padding: 10px 15px;
+	transition: all ease-in-out 0.5s;
+	cursor: pointer;
+}
+
+.modal-form .btn button:hover {
+	background-color: #888;
+	color: #000;
+}
+
+.amount {
+	width: 30%;
+}
+
+@media only screen and (max-width: 1000px) {
+	.modal-content {
+		width: 40%;
+	}
+}
+
+@media only screen and (max-width: 920px) {
+	.user-right-card {
+		width: 300px;
+	}
+
+	.user-head-content {
+		width: 270px;
+	}
+
+	.user-body-item {
+		width: 270px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.user-left {
+		width: 270px;
+	}
+
+	.user-content h1 {
+		font-size: 40px;
+	}
+
+	.user-content h2 {
+		font-size: 25px;
+	}
+
+	.user-content h3 {
+		font-size: 25px;
+	}
+
+	.user-left {
+		width: 350px;
+	}
+
+	.user-content h1 {
+		font-size: 50px;
+	}
+
+	.user-content h2 {
+		font-size: 30px;
+	}
+
+	.user-content h3 {
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	.modal-content {
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	.user-showcase {
+		height: 120vh;
+	}
+
+	.user-content {
+		width: 95vw;
+		height: 120vh;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.user-left {
+		width: 95vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 40px;
+	}
+
+	.user-content h1 {
+		font-size: 60px;
+	}
+
+	.user-content h2 {
+		font-size: 30px;
+	}
+
+	.user-content h3 {
+		font-size: 30px;
+	}
+
+	.user-right {
+		background-color: red;
+		margin: unset;
+	}
+
+	.modal-content {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-width: 475px) {
+	.user-content h1 {
+		font-size: 50px;
+	}
+
+	.user-content h2 {
+		font-size: 25px;
+	}
+
+	.user-content h3 {
+		font-size: 25px;
+	}
+
+	.modal-content {
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width: 390px) {
+	.user-content h1 {
+		font-size: 40px;
+	}
+
+	.user-content h2 {
+		font-size: 20px;
+	}
+
+	.user-content h3 {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	.user-container {
+		flex-direction: column;
+	}
+
+	.logo {
+		margin-bottom: 10px;
+	}
+}
+
+@media only screen and (max-width: 310px) {
+	.user-content h1 {
+		font-size: 30px;
+	}
+
+	.user-content h2 {
+		font-size: 18px;
+	}
+
+	.user-content h3 {
+		font-size: 18px;
+	}
+
+	.user-right-card {
+		width: 250px;
+	}
+
+	.user-head-content {
+		width: 230px;
+	}
+
+	.user-body-item {
+		width: 230px;
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 280px) {
+	.user-left {
+		width: 95vw;
+		display: block;
+	}
 }

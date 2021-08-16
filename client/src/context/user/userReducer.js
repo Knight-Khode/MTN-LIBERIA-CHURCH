@@ -1,6 +1,9 @@
 import{
     SHOW_BRANCHES,
-    SHOW_PAYMENT
+    SHOW_PAYMENT,
+    SHOW_MODAL,
+    PAYMENT,
+    PAYMENT_FAIL
 } from '../types'
 
 export default (state,action)=>{
@@ -16,6 +19,24 @@ export default (state,action)=>{
                 ...state,
                 ...action.payload,
                 showPayments:action.payload
+            }
+        case SHOW_MODAL:
+            return{
+                ...state,
+                ...action.payload,
+                showModal:action.payload
+            }
+        case PAYMENT:
+            return{
+                ...state,
+                ...action.payload,
+                isPaid:true
+            }
+        case PAYMENT_FAIL:
+            return{
+                ...state,
+                ...action.payload,
+                isPaid:false
             }
         default:
             return state
