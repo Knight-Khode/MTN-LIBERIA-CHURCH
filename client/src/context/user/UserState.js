@@ -7,7 +7,8 @@ import {
     SHOW_PAYMENT,
     SHOW_MODAL,
     PAYMENT,
-    PAYMENT_FAIL
+    PAYMENT_FAIL,
+    GET_EVENTS
 }from '../types'
 
 const UserState = (props) => {
@@ -16,6 +17,7 @@ const UserState = (props) => {
         showPayments:"hide2",
         showModal:"hide2",
         isPaid:false,
+        events:null
     }
 
     const [state,dispatch]=useReducer(userReducer,initialState)
@@ -65,16 +67,33 @@ const UserState = (props) => {
         }
     }
 
+    const getEvents = async()=>{
+        try{
+            //sending GET api call to backend to get all events
+            //const res = await axios.get('route goes here')
+            dispatch({
+                type:GET_EVENTS,
+                //payload:res.data
+            })
+        }catch(err){
+            dispatch({
+                payload:"could not get events from backend"
+            })
+        }
+    }
+
     return (
         <userContext.Provider value={{
             showBranches:state.showBranches,
             showPayments:state.showPayments,
             showModal:state.showModal,
             isPaid:state.isPaid,
+            events:state.events,
             showBranch,
             showPayment,
             modal,
-            registerPayment
+            registerPayment,
+            getEvents
         }}>
             {props.children}
         </userContext.Provider>

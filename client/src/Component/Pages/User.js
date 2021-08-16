@@ -17,13 +17,13 @@ const User = () => {
                 <div className="userbody-flex">
                     <UserSideBar/>
                    <div className="body-flex">
+                    <UserVideo/>
+                    <UserQuotation/>
                     <Branches/>
                     <UserPayment/>
                     <PaymentModal/>
-                    <UserVideo/>
                    </div>
                 </div>
-                <UserQuotation/>
             </div>
         </div>
     )

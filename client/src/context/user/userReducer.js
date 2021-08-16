@@ -3,7 +3,8 @@ import{
     SHOW_PAYMENT,
     SHOW_MODAL,
     PAYMENT,
-    PAYMENT_FAIL
+    PAYMENT_FAIL,
+    GET_EVENTS
 } from '../types'
 
 export default (state,action)=>{
@@ -37,6 +38,12 @@ export default (state,action)=>{
                 ...state,
                 ...action.payload,
                 isPaid:false
+            }
+        case GET_EVENTS:
+            return{
+                ...state,
+                ...action.payload,
+                events:action.payload
             }
         default:
             return state

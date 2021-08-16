@@ -1,6 +1,15 @@
-import React from 'react'
+import React,{useContext,useEffect} from 'react'
+import UserContext from '../../../context/user/userContext'
 
 const UserShowcase = () => {
+    const userContext = useContext(UserContext)
+    const {getEvents} = userContext
+
+    useEffect(()=>{
+        //uncomment this when backend to get events is set
+        //getEvents()
+    },[])
+
     return (
         <div className="user-showcase">
             <div className="user-overlay">
