@@ -5,12 +5,13 @@ import Signup from './Component/Pages/Signup';
 import Login from './Component/Pages/Login';
 import Admin from './Component/Pages/Admin';
 import User from './Component/Pages/User';
+import AdminLogin from './Component/Pages/AdminLogin'
+import Otp from './Component/Pages/Otp';
+import PrivateRoute from './Component/routing/PrivateRoute';
+import PrivateRoute2 from './Component/routing/PrivateRoute2';
 import AdminState from './context/admin/AdminState';
 import AuthState from './context/auth/AuthState';
 import UserState from './context/user/UserState';
-import PrivateRoute from './Component/routing/PrivateRoute';
-import PrivateRoute2 from './Component/routing/PrivateRoute2';
-import AdminLogin from './Component/Pages/AdminLogin';
 import './App.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route exact path="/login" component={Login}/>
               <PrivateRoute exact path="/admin" component={Admin}/>
               <Route exact path="/adminLogin" component={AdminLogin}/>
+              <Route exact path="/otp" component={Otp}/>
               <PrivateRoute2 exact path="/user" component={User}/>
             </Switch>
           </Router>
