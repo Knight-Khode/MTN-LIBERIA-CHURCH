@@ -1,9 +1,13 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import '../../otp.css'
 import otp from '../../img/otp.jpg'
 import Navbar from '../reuseables/Navbar'
+import AuthContext from '../../context/auth/authContext'
 
 const Otp = () => {
+    const authContext = useContext(AuthContext)
+    const {sendOtp} = authContext
+
     const [otpInput,setOtp] = useState({
         otp1:'',
         otp2:'',
@@ -25,15 +29,11 @@ const Otp = () => {
     const onSubmit = (e)=>{
         e.preventDefault()
         let digits = Object.values(otpInput)
-        let otpdigits = ''
+        let otpDigits = ''
         digits.forEach(val=>{
-            otpdigits += val
+            otpDigits += val
         })
-        console.log(otpdigits)
-        /*setOtp({
-            otp:string
-        })
-        console.log(otpInput)*/
+        sendOtp(otpDigits)
     }
 
     return (

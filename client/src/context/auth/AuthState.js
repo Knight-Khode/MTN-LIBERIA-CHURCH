@@ -7,7 +7,8 @@ import {
     REGISTER_SUCCESS,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    LOGOUT_USER
+    LOGOUT_USER,
+    SEND_OTP
 }from '../types'
 
 const AuthState = (props) => {
@@ -72,6 +73,31 @@ const AuthState = (props) => {
         }
     }
 
+    //SEND OTP DIGITS
+    const sendOtp = (otp)=>{
+        const config={
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }
+
+        try{
+            //api call to send 6 otp digits to backend
+            //const res = await axios.post('api route goes here',otp,config)
+            dispatch({
+                type:SEND_OTP
+            })
+
+            //loadUser()
+            
+        }catch(err){
+            dispatch({
+                payload://error if otp is wrong
+                "Check otp digits"
+            })
+        }
+    }
+
     const logout = ()=>{
         dispatch({
             type:LOGOUT_USER
@@ -85,7 +111,8 @@ const AuthState = (props) => {
             error:state.error,
             logout,
             register,
-            login
+            login,
+            sendOtp
         }}>
             {props.children}
         </authContext.Provider>

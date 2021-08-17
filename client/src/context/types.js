@@ -14,3 +14,4 @@ export const SHOW_MODAL = "SHOW_MODAL"
 export const PAYMENT = "PAYMENT"
 export const PAYMENT_FAIL = "PAYMENT_FAIL"
 export const GET_EVENTS = "GET_EVENTS"
+export const SEND_OTP = 'SEND_OTP'
