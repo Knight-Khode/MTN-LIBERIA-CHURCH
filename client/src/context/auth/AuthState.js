@@ -9,7 +9,9 @@ import {
     LOGIN_FAIL,
     LOGOUT_USER,
     SEND_OTP,
-    SEND_OTP_FAIL
+    SEND_OTP_FAIL,
+    SHOW_FORGOTTEN_PASSWORD,
+    SEND_RECOVERY_EMAIL
 }from '../types'
 
 const AuthState = (props) => {
@@ -18,7 +20,9 @@ const AuthState = (props) => {
         user:null,
         error:null,
         loggedIn:null,
-        signUp:null
+        signUp:null,
+        recovery:null,
+        showForgotModal:"hide2"
     }
 
     const [state,dispatch]=useReducer(authReducer,initialState)
@@ -102,6 +106,36 @@ const AuthState = (props) => {
         }
     }
 
+    const sendRecoveryEmail = (email)=>{
+        const config={
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }
+
+        try{
+            //api call to recover password 
+            //const res = await axios.post('api route goes here',email,config)
+            dispatch({
+                type:SEND_RECOVERY_EMAIL
+            })
+            
+        }catch(err){
+            dispatch({
+                type:SEND_OTP_FAIL,
+                payload://error if password recovery fails
+                "Check email"
+            })
+        }
+    }
+
+    const showModal = (text)=>{
+        dispatch({
+            type:SHOW_FORGOTTEN_PASSWORD,
+            payload:text
+        })
+    }
+
     const logout = ()=>{
         dispatch({
             type:LOGOUT_USER
@@ -115,10 +149,14 @@ const AuthState = (props) => {
             error:state.error,
             loggedIn:state.loggedIn,
             signUp:state.signUp,
+            showForgotModal:state.showForgotModal,
+            recovery:state.recovery,
             logout,
             register,
             login,
-            sendOtp
+            sendOtp,
+            showModal,
+            sendRecoveryEmail
         }}>
             {props.children}
         </authContext.Provider>

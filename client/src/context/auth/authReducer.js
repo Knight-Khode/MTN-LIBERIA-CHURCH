@@ -5,7 +5,9 @@ import {
     LOGIN_FAIL,
     LOGOUT_USER,
     SEND_OTP,
-    SEND_OTP_FAIL
+    SEND_OTP_FAIL,
+    SHOW_FORGOTTEN_PASSWORD,
+    SEND_RECOVERY_EMAIL
 } from '../types'
 
 export default (state,action)=>{
@@ -43,6 +45,18 @@ export default (state,action)=>{
                 ...state,
                 ...action.payload,
                 isAuthenticated:false
+            }
+        case SHOW_FORGOTTEN_PASSWORD:
+            return{
+                ...state,
+                ...action.payload,
+                showForgotModal:action.payload
+            }
+        case SEND_RECOVERY_EMAIL:
+            return{
+                ...state,
+                ...action.payload,
+                recovery:true
             }
         default:
             return state

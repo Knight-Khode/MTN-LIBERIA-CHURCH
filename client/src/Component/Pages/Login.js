@@ -3,10 +3,11 @@ import AuthContext from '../../context/auth/authContext'
 import '../../signup.css'
 import { Link,withRouter } from 'react-router-dom'
 import Navbar from '../reuseables/Navbar'
+import ForgotModal from '../Layout/ForgotModal'
 
 const Login = (props) => {
     const authContext = useContext(AuthContext)
-    const {login,loggedIn} = authContext
+    const {login,loggedIn,showModal,showForgotModal} = authContext
     
     useEffect(()=>{
         if(loggedIn){
@@ -19,6 +20,14 @@ const Login = (props) => {
         password:'',
         number:''
     })
+
+    const onClick=()=>{
+        if(showForgotModal==="hide2"){
+            showModal('show2')
+        }else{
+            showModal('hide2')
+        }
+    }
 
     const {username,password,number} = user
 
@@ -63,7 +72,7 @@ const Login = (props) => {
                                     <a className="check">Do not have an Account? Signup</a>
                                 </Link>
                                 <div className="forgotten">
-                                    <a href="#" className="check">Forgotten password?</a>
+                                    <a href="#" className="check" onClick={onClick}>Forgotten password?</a>
                                 </div>
                             </div>                          
                             <div className="sign-up-btn">
@@ -74,6 +83,7 @@ const Login = (props) => {
                     <div className="sign-up-right back2"></div>
                 </div>
             </div>
+            <ForgotModal/>
         </Fragment>
     )
 }
