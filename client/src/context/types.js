@@ -15,3 +15,4 @@ export const PAYMENT = "PAYMENT"
 export const PAYMENT_FAIL = "PAYMENT_FAIL"
 export const GET_EVENTS = "GET_EVENTS"
 export const SEND_OTP = 'SEND_OTP'
+export const SEND_OTP_FAIL = 'SEND_OTP_FAIL'

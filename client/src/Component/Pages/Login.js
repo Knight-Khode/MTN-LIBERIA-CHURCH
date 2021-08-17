@@ -6,13 +6,11 @@ import Navbar from '../reuseables/Navbar'
 
 const Login = (props) => {
     const authContext = useContext(AuthContext)
-    const {login,isAuthenticated} = authContext
+    const {login} = authContext
     
     useEffect(()=>{
-        if(isAuthenticated){
-            props.history.push('/user')
-        }
-    },[isAuthenticated,props.history])
+        props.history.push('/otp')
+    },[props.history])
 
     const [user,setUser] = useState({
         username:'',

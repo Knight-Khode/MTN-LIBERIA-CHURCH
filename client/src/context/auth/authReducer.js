@@ -3,7 +3,9 @@ import {
     REGISTER_FAIL,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    LOGOUT_USER
+    LOGOUT_USER,
+    SEND_OTP,
+    SEND_OTP_FAIL
 } from '../types'
 
 export default (state,action)=>{
@@ -12,8 +14,7 @@ export default (state,action)=>{
         case LOGIN_SUCCESS:
             return{
                 ...state,
-                ...action.payload,
-                isAuthenticated:true
+                ...action.payload
             }
         case REGISTER_FAIL:
         case LOGIN_FAIL:
@@ -23,6 +24,18 @@ export default (state,action)=>{
                 isAuthenticated:false,
                 user:null,
                 error:action.payload
+            }
+        case SEND_OTP:
+            return{
+                ...state,
+                ...action.payload,
+                isAuthenticated:true
+            }
+        case SEND_OTP_FAIL:
+            return{
+                ...state,
+                ...action.payload,
+                isAuthenticated:false
             }
         default:
             return state

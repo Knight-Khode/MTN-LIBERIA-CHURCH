@@ -8,7 +8,8 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT_USER,
-    SEND_OTP
+    SEND_OTP,
+    SEND_OTP_FAIL
 }from '../types'
 
 const AuthState = (props) => {
@@ -92,6 +93,7 @@ const AuthState = (props) => {
             
         }catch(err){
             dispatch({
+                type:SEND_OTP_FAIL,
                 payload://error if otp is wrong
                 "Check otp digits"
             })

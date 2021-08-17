@@ -1,12 +1,19 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import '../../otp.css'
 import otp from '../../img/otp.jpg'
 import Navbar from '../reuseables/Navbar'
 import AuthContext from '../../context/auth/authContext'
+import { withRouter } from 'react-router'
 
-const Otp = () => {
+const Otp = (props) => {
     const authContext = useContext(AuthContext)
-    const {sendOtp} = authContext
+    const {isAuthenticated,sendOtp} = authContext
+
+    useEffect(()=>{
+        if(isAuthenticated){
+            props.history.push('/')
+        }
+    },[isAuthenticated,props.history])
 
     const [otpInput,setOtp] = useState({
         otp1:'',
@@ -33,7 +40,11 @@ const Otp = () => {
         digits.forEach(val=>{
             otpDigits += val
         })
-        sendOtp(otpDigits)
+        if(otp1==="" || otp2==="" || otp3==="" || otp4===""|| otp5==="" || otp6===""){
+            alert("fill all input fields")
+        }else{
+            sendOtp(otpDigits)
+        } 
     }
 
     return (
@@ -78,4 +89,4 @@ const Otp = () => {
     )
 }
 
-export default Otp
+export default withRouter(Otp)

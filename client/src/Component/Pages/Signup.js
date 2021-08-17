@@ -6,13 +6,11 @@ import '../../signup.css'
 
 const Signup = (props) => {
     const authContext = useContext(AuthContext)
-    const {register,isAuthenticated} = authContext
+    const {register} = authContext
 
     useEffect(()=>{
-        if(isAuthenticated){
-            props.history.push('/user')
-        }
-    },[isAuthenticated,props.history])
+            props.history.push('/otp')
+    },[props.history])
 
     const [user,setUser] = useState({
         fullName:'',
