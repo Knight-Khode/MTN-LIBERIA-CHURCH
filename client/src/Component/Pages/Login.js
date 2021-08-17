@@ -6,18 +6,21 @@ import Navbar from '../reuseables/Navbar'
 
 const Login = (props) => {
     const authContext = useContext(AuthContext)
-    const {login} = authContext
+    const {login,loggedIn} = authContext
     
     useEffect(()=>{
-        props.history.push('/otp')
-    },[props.history])
+        if(loggedIn){
+            props.history.push('/otp')
+        }
+    },[loggedIn,props.history])
 
     const [user,setUser] = useState({
         username:'',
-        password:''
+        password:'',
+        number:''
     })
 
-    const {username,password} = user
+    const {username,password,number} = user
 
     const onChange=(e)=>{
         setUser({
@@ -28,7 +31,7 @@ const Login = (props) => {
 
     const onSubmit = (e)=>{
         e.preventDefault()
-        if(username===''|| password ===''){
+        if(username===''|| password ===''|| number ===''){
             //setAlert('Please fill in all fields','danger')
         }else{
             login(user)
@@ -48,7 +51,10 @@ const Login = (props) => {
                             </div>
                             <div className="sign-up-form-group">
                                 <input type="text" name="username" placeholder="Username" value={username} onChange={onChange}/>
-                            </div>                                                  
+                            </div>
+                            <div className="sign-up-form-group">
+                                <input type="text" name="number" placeholder="number" value={number} onChange={onChange}/>
+                            </div>                                                   
                             <div className="sign-up-form-group">
                                 <input type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
                             </div>
@@ -56,6 +62,9 @@ const Login = (props) => {
                                 <Link to="/signup">
                                     <a className="check">Do not have an Account? Signup</a>
                                 </Link>
+                                <div className="forgotten">
+                                    <a href="#" className="check">Forgotten password?</a>
+                                </div>
                             </div>                          
                             <div className="sign-up-btn">
                                 <button type="submit">Login</button>

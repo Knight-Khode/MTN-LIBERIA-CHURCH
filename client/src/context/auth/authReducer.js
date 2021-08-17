@@ -10,11 +10,17 @@ import {
 
 export default (state,action)=>{
     switch(action.type){
-        case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
             return{
                 ...state,
-                ...action.payload
+                ...action.payload,
+                loggedIn:true
+            }
+        case REGISTER_SUCCESS:
+            return{
+                ...state,
+                ...action.payload,
+                signUp:true
             }
         case REGISTER_FAIL:
         case LOGIN_FAIL:
@@ -22,6 +28,7 @@ export default (state,action)=>{
             return{
                 ...state,
                 isAuthenticated:false,
+                loggedIn:false,
                 user:null,
                 error:action.payload
             }

@@ -11,7 +11,7 @@ const Otp = (props) => {
 
     useEffect(()=>{
         if(isAuthenticated){
-            props.history.push('/')
+            props.history.push('/user')
         }
     },[isAuthenticated,props.history])
 
