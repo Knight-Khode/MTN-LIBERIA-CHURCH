@@ -1,10 +1,18 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext,useState,useEffect} from 'react'
+import { withRouter } from 'react-router'
 import AuthContext from '../../context/auth/authContext'
 import '../../user.css'
 
-const ForgotModal = () => {
+const ForgotModal = (props) => {
     const authContext = useContext(AuthContext)
-    const {showModal,showForgotModal} = authContext
+    const {showModal,showForgotModal,recovery,sendRecoveryEmail} = authContext
+
+    useEffect(()=>{
+        if(recovery){
+            props.history.push('/forgot')
+        }
+    },[recovery,props.hsitory])
+
     const [forgot,setForgot] = useState({
         email:""
     })
@@ -28,6 +36,8 @@ const ForgotModal = () => {
         e.preventDefault()
         if(email === ""){
             alert('Enter email')
+        }else{
+            sendRecoveryEmail(forgot)
         }
     }
 
@@ -53,4 +63,4 @@ const ForgotModal = () => {
     )
 }
 
-export default ForgotModal
+export default withRouter(ForgotModal)

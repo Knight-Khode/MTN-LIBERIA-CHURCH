@@ -21,8 +21,8 @@ const AuthState = (props) => {
         error:null,
         loggedIn:null,
         signUp:null,
-        recovery:null,
-        showForgotModal:"hide2"
+        showForgotModal:"hide2",
+        recovery:null
     }
 
     const [state,dispatch]=useReducer(authReducer,initialState)

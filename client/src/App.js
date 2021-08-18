@@ -5,6 +5,7 @@ import Signup from './Component/Pages/Signup';
 import Login from './Component/Pages/Login';
 import Admin from './Component/Pages/Admin';
 import User from './Component/Pages/User';
+import ForgotPassword from './Component/Pages/ForgotPassword';
 import AdminLogin from './Component/Pages/AdminLogin'
 import Otp from './Component/Pages/Otp';
 import PrivateRoute from './Component/routing/PrivateRoute';
@@ -27,6 +28,7 @@ function App() {
               <PrivateRoute exact path="/admin" component={Admin}/>
               <Route exact path="/adminLogin" component={AdminLogin}/>
               <Route exact path="/otp" component={Otp}/>
+              <Route exact path="/forgot" component={ForgotPassword}/>
               <PrivateRoute2 exact path="/user" component={User}/>
             </Switch>
           </Router>
