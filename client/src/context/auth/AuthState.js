@@ -24,17 +24,24 @@ const AuthState = (props) => {
     const [state,dispatch]=useReducer(authReducer,initialState)
 
     //Register User
-    const register = async (formData)=>{
+    const register =  (formData)=>{
         const config={
-            headers:{
-                'Content-Type':'application/json'
-            }
+            // headers:{
+            //     'Content-Type':'application/json'
+            // }
         }
 
         try{
             //api call to register user at backend
-            //const res = await axios.post("route goes here",formData,config)
-            console.log(formData)
+            console.log(formData,"Hello")
+           axios.post("http://localhost:5000​/api​/Auth​/register",formData,config)
+           .then(data => console.log(data))
+            //  fetch("http://localhost:5000​/api​/Auth​/register",{
+            //     method:"POST",
+            //     body:formData
+            // }).then(res => res.json())
+            // .then(data => console.log(data))
+        // console.log(res);
             dispatch({
                 type:REGISTER_SUCCESS,
                 payload:formData
@@ -60,7 +67,7 @@ const AuthState = (props) => {
         try{
             //api call to login user is made here
             //const res = await axios.post('api route goes here',formData,config)
-            console.log(formData)
+            // console.log(formData)
             dispatch({
                 type:LOGIN_SUCCESS
             })
@@ -77,7 +84,7 @@ const AuthState = (props) => {
     }
 
     //SEND OTP DIGITS
-    const sendOtp = (otp)=>{
+    const sendOtp = async(otp)=>{
         const config={
             headers:{
                 'Content-Type':'application/json'
@@ -86,7 +93,7 @@ const AuthState = (props) => {
 
         try{
             //api call to send 6 otp digits to backend
-            //const res = await axios.post('api route goes here',otp,config)
+            const res = await axios.post('https://localhost:5001​/api​/Auth​/verifymsisdn',otp,config)
             dispatch({
                 type:SEND_OTP
             })
@@ -118,7 +125,7 @@ const AuthState = (props) => {
             logout,
             register,
             login,
-            sendOtp
+            // sendOtp
         }}>
             {props.children}
         </authContext.Provider>

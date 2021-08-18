@@ -20,10 +20,10 @@ const Signup = (props) => {
         email:'',
         password:'',
         password2:'',
-        number:''
+        phoneNumber:''
     })
 
-    const {fullName,username,email,password,password2,number} = user
+    const {fullName,username,email,password,password2,phoneNumber} = user
 
     const onChange=(e)=>{
         setUser({
@@ -34,7 +34,7 @@ const Signup = (props) => {
 
     const onSubmit = (e)=>{
         e.preventDefault()
-        if(fullName==='' || username ==='' || password2 === '' || email === '' || password === '' || number === ''){
+        if(fullName==='' || username ==='' || password2 === '' || email === '' || password === '' || phoneNumber === ''){
             //setAlert('Please enter all fields','danger')
         }else if(password !== password2){
             //setAlert('Passwords do not match','danger')
@@ -43,7 +43,7 @@ const Signup = (props) => {
                 fullName,
                 email,
                 username,
-                number,
+                phoneNumber,
                 password
             })
             setUser({
@@ -52,7 +52,7 @@ const Signup = (props) => {
                 email:'',
                 password:'',
                 password2:'',
-                number:''
+                phoneNumber:''
             })
         }  
     }
@@ -78,7 +78,7 @@ const Signup = (props) => {
                                 <input type="email" name="email" placeholder="E-mail" value={email} onChange={onChange}/>
                             </div>
                             <div className="sign-up-form-group">
-                                <input type="text" name="number" placeholder="Number" value={number} onChange={onChange}/>
+                                <input type="text" name="phoneNumber" placeholder="Number" value={phoneNumber} onChange={onChange}/>
                             </div>
                             <div className="sign-up-form-group">
                                 <input type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
