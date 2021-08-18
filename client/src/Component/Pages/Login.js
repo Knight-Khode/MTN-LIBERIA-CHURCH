@@ -11,14 +11,13 @@ const Login = (props) => {
     
     useEffect(()=>{
         if(loggedIn){
-            props.history.push('/otp')
+            props.history.push("otp")
         }
     },[loggedIn,props.history])
 
     const [user,setUser] = useState({
         username:'',
         password:'',
-        number:''
     })
 
     const onClick=()=>{
@@ -29,7 +28,7 @@ const Login = (props) => {
         }
     }
 
-    const {username,password,number} = user
+    const {username,password} = user
 
     const onChange=(e)=>{
         setUser({
@@ -40,7 +39,7 @@ const Login = (props) => {
 
     const onSubmit = (e)=>{
         e.preventDefault()
-        if(username===''|| password ===''|| number ===''){
+        if(username===''|| password ===''){
             //setAlert('Please fill in all fields','danger')
         }else{
             login(user)
@@ -61,9 +60,6 @@ const Login = (props) => {
                             <div className="sign-up-form-group">
                                 <input type="text" name="username" placeholder="Username" value={username} onChange={onChange}/>
                             </div>
-                            <div className="sign-up-form-group">
-                                <input type="text" name="number" placeholder="number" value={number} onChange={onChange}/>
-                            </div>                                                   
                             <div className="sign-up-form-group">
                                 <input type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
                             </div>

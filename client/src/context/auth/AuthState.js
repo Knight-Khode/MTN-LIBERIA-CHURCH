@@ -11,7 +11,8 @@ import {
     SEND_OTP,
     SEND_OTP_FAIL,
     SHOW_FORGOTTEN_PASSWORD,
-    SEND_RECOVERY_EMAIL
+    SEND_RECOVERY_EMAIL,
+    baseUrl
 }from '../types'
 
 const AuthState = (props) => {
@@ -30,20 +31,28 @@ const AuthState = (props) => {
     //Register User
     const register = async (formData)=>{
         const config={
+            mode:'cors',
+            method:'POST',
+            cache:'no-cache',
             headers:{
-                'Content-Type':'application/json'
-            }
+                'Authorization':'Access',
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(formData)
         }
 
         try{
-            //api call to register user at backend
-            //const res = await axios.post("route goes here",formData,config)
-            console.log(formData)
+            // const res = await axios.post("http://localhost:5000/api/auth/register",formData,config)
+            const res = await fetch(`${baseUrl}/api/auth/register`,config);
+            var responseData = await res.json();
+
+            console.log('resp data', responseData)
             dispatch({
                 type:REGISTER_SUCCESS,
                 payload:formData
             })
         }catch(err){
+            console.error('API Error', err)
             dispatch({
                 type:REGISTER_FAIL,
                 payload://Error message from backend just incase an input field was empty
@@ -56,57 +65,65 @@ const AuthState = (props) => {
      //Login User
      const login = async (formData)=>{
         const config={
+            mode:'cors',
+            method:'POST',
+            cache:'no-cache',
             headers:{
-                'Content-Type':'application/json'
-            }
+                'Authorization':'Access',
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(formData)
         }
-
         try{
-            //api call to login user is made here
-            //const res = await axios.post('api route goes here',formData,config)
-            console.log(formData)
-            dispatch({
-                type:LOGIN_SUCCESS
-            })
+            const res = await fetch(`${baseUrl}/api/auth/login`,config);
+            var responseData = await res.json();
 
-            //loadUser()
-            
+            console.log('resp data', responseData)
+            dispatch({
+                type:LOGIN_SUCCESS,
+                payload:formData
+            })
         }catch(err){
+            console.error('API Error', err)
             dispatch({
                 type:LOGIN_FAIL,
-                payload://error incase login deatails are wrong goes here, would be using dummy error for now
-                "Check login credentials"
+                payload:"Check all your input fields"
             })
         }
+   
     }
 
     //SEND OTP DIGITS
-    const sendOtp = (otp)=>{
+    const sendOtp = async (otp)=>{
         const config={
+            mode:'cors',
+            method:'POST',
+            cache:'no-cache',
             headers:{
-                'Content-Type':'application/json'
-            }
+                'Authorization':'Access',
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(otp)
         }
-
         try{
-            //api call to send 6 otp digits to backend
-            //const res = await axios.post('api route goes here',otp,config)
-            dispatch({
-                type:SEND_OTP
-            })
+            const res = await fetch(`${baseUrl}/api/auth/verifymsisdn`,config);
+            var responseData = await res.json();
 
-            //loadUser()
-            
+            console.log('resp data', responseData)
+            dispatch({
+                type:SEND_OTP,
+                payload:otp
+            })
         }catch(err){
+            console.error('API Error', err)
             dispatch({
                 type:SEND_OTP_FAIL,
-                payload://error if otp is wrong
-                "Check otp digits"
+                payload:"Check all your input fields"
             })
-        }
+        }     
     }
 
-    const sendRecoveryEmail = (email)=>{
+    const sendRecoveryEmail = async(email)=>{
         const config={
             headers:{
                 'Content-Type':'application/json'
@@ -115,7 +132,7 @@ const AuthState = (props) => {
 
         try{
             //api call to recover password 
-            //const res = await axios.post('api route goes here',email,config)
+            const res = await axios.post('api route goes here',email,config)
             dispatch({
                 type:SEND_RECOVERY_EMAIL
             })

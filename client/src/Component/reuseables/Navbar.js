@@ -11,22 +11,22 @@ const Navbar = () => {
                 </div>
                 <div className="nav-links">
                     <Link to="/" className="nav-margin">
-                        <a>Home</a>
+                        Home
                     </Link>
                     <div className="dropdown">
                         <button className="dropbtn">Login
                         </button>
                         <div className="dropdown-content">
                             <Link to='/login'>
-                                <a>Subscriber</a>
+                                Subscriber
                             </Link>
                             <Link to='/adminLogin'>
-                                <a>Admin</a>
+                                Admin
                             </Link>
                         </div>
                     </div>
                     <Link to="/signup" className="nav-margin">
-                        <a>Signup</a>
+                        Signup
                     </Link>
                 </div>
             </div>

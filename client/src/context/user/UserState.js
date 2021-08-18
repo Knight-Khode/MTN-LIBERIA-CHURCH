@@ -4,11 +4,13 @@ import userContext from './userContext'
 import userReducer from './userReducer'
 import {
     SHOW_BRANCHES,
+    SHOW_BRANCHES_FAILED,
     SHOW_PAYMENT,
     SHOW_MODAL,
     PAYMENT,
     PAYMENT_FAIL,
-    GET_EVENTS
+    GET_EVENTS,
+    baseUrl
 }from '../types'
 
 const UserState = (props) => {
@@ -22,11 +24,33 @@ const UserState = (props) => {
 
     const [state,dispatch]=useReducer(userReducer,initialState)
 
-    const showBranch = (text)=>{
-        dispatch({
-            type:SHOW_BRANCHES,
-            payload:text
-        })
+    const showBranch = async(text)=>{
+        const config={
+            mode:'cors',
+            method:'GET',
+            cache:'no-cache',
+            headers:{
+                'Authorization':'Access',
+                'Content-Type' : 'application/json'
+            },
+            //body: JSON.stringify(text)
+        }
+        try{
+            const res = await fetch(`${baseUrl}/api/church/getchurches`,config);
+            var responseData = await res.json();
+
+            console.log('resp data', responseData)
+            dispatch({
+                type:SHOW_BRANCHES,
+               // payload:text
+            })
+        }catch(err){
+            console.error('API Error', err)
+            dispatch({
+                type:SHOW_BRANCHES_FAILED,
+                payload:"failed to load data"
+            })
+        }
     }
 
     const showPayment = (text)=>{

@@ -32,19 +32,20 @@ const Signup = (props) => {
         })
     }
 
-    const onSubmit = (e)=>{
+    const onSubmit = async (e)=>{
         e.preventDefault()
         if(fullName==='' || username ==='' || password2 === '' || email === '' || password === '' || phoneNumber === ''){
             //setAlert('Please enter all fields','danger')
         }else if(password !== password2){
             //setAlert('Passwords do not match','danger')
         }else{
-            register({
+            await register({
                 fullName,
                 email,
                 username,
                 phoneNumber,
-                password
+                password,
+                confirmPassword:password2
             })
             setUser({
                 fullName:'',
