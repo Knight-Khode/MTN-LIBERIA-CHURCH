@@ -9,7 +9,9 @@ import {
     LOGIN_FAIL,
     LOGOUT_USER,
     SEND_OTP,
-    SEND_OTP_FAIL
+    SEND_OTP_FAIL,
+    SHOW_FORGOTTEN_PASSWORD,
+    SEND_RECOVERY_EMAIL
 }from '../types'
 
 const AuthState = (props) => {
@@ -18,30 +20,25 @@ const AuthState = (props) => {
         user:null,
         error:null,
         loggedIn:null,
-        signUp:null
+        signUp:null,
+        showForgotModal:"hide2",
+        recovery:null
     }
 
     const [state,dispatch]=useReducer(authReducer,initialState)
 
     //Register User
-    const register =  (formData)=>{
+    const register = async (formData)=>{
         const config={
-            // headers:{
-            //     'Content-Type':'application/json'
-            // }
+            headers:{
+                'Content-Type':'application/json'
+            }
         }
 
         try{
             //api call to register user at backend
-            console.log(formData,"Hello")
-           axios.post("http://localhost:5000​/api​/Auth​/register",formData,config)
-           .then(data => console.log(data))
-            //  fetch("http://localhost:5000​/api​/Auth​/register",{
-            //     method:"POST",
-            //     body:formData
-            // }).then(res => res.json())
-            // .then(data => console.log(data))
-        // console.log(res);
+            //const res = await axios.post("route goes here",formData,config)
+            console.log(formData)
             dispatch({
                 type:REGISTER_SUCCESS,
                 payload:formData
@@ -67,7 +64,7 @@ const AuthState = (props) => {
         try{
             //api call to login user is made here
             //const res = await axios.post('api route goes here',formData,config)
-            // console.log(formData)
+            console.log(formData)
             dispatch({
                 type:LOGIN_SUCCESS
             })
@@ -84,7 +81,7 @@ const AuthState = (props) => {
     }
 
     //SEND OTP DIGITS
-    const sendOtp = async(otp)=>{
+    const sendOtp = (otp)=>{
         const config={
             headers:{
                 'Content-Type':'application/json'
@@ -93,7 +90,7 @@ const AuthState = (props) => {
 
         try{
             //api call to send 6 otp digits to backend
-            const res = await axios.post('https://localhost:5001​/api​/Auth​/verifymsisdn',otp,config)
+            //const res = await axios.post('api route goes here',otp,config)
             dispatch({
                 type:SEND_OTP
             })
@@ -109,6 +106,36 @@ const AuthState = (props) => {
         }
     }
 
+    const sendRecoveryEmail = (email)=>{
+        const config={
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }
+
+        try{
+            //api call to recover password 
+            //const res = await axios.post('api route goes here',email,config)
+            dispatch({
+                type:SEND_RECOVERY_EMAIL
+            })
+            
+        }catch(err){
+            dispatch({
+                type:SEND_OTP_FAIL,
+                payload://error if password recovery fails
+                "Check email"
+            })
+        }
+    }
+
+    const showModal = (text)=>{
+        dispatch({
+            type:SHOW_FORGOTTEN_PASSWORD,
+            payload:text
+        })
+    }
+
     const logout = ()=>{
         dispatch({
             type:LOGOUT_USER
@@ -122,10 +149,14 @@ const AuthState = (props) => {
             error:state.error,
             loggedIn:state.loggedIn,
             signUp:state.signUp,
+            showForgotModal:state.showForgotModal,
+            recovery:state.recovery,
             logout,
             register,
             login,
-            // sendOtp
+            sendOtp,
+            showModal,
+            sendRecoveryEmail
         }}>
             {props.children}
         </authContext.Provider>
