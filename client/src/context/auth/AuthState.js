@@ -45,7 +45,7 @@ const AuthState = (props) => {
             //const res = await fetch("route goes here",config)
             dispatch({
                 type:USER_LOADED,
-                payload:res.json()
+                //payload:res.json()
             })
         }catch(error){
             //any error from the backend should be passed here
