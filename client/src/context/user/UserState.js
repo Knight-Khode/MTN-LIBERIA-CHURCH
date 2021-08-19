@@ -7,9 +7,11 @@ import {
     SHOW_BRANCHES_FAILED,
     SHOW_PAYMENT,
     SHOW_MODAL,
+    SHOW_USER_SIDEBAR,
     PAYMENT,
     PAYMENT_FAIL,
     GET_EVENTS,
+    GET_CHURCH_BRANCHES,
     baseUrl
 }from '../types'
 
@@ -18,13 +20,15 @@ const UserState = (props) => {
         showBranches:"hide2",
         showPayments:"hide2",
         showModal:"hide2",
+        showSideBarClass:"hide2",
         isPaid:false,
-        events:null
+        events:null,
+        chruchBranches:null
     }
 
     const [state,dispatch]=useReducer(userReducer,initialState)
 
-    const showBranch = async(text)=>{
+    const getChurchBranch = async()=>{
         const config={
             mode:'cors',
             method:'GET',
@@ -32,8 +36,7 @@ const UserState = (props) => {
             headers:{
                 'Authorization':'Access',
                 'Content-Type' : 'application/json'
-            },
-            //body: JSON.stringify(text)
+            }
         }
         try{
             const res = await fetch(`${baseUrl}/api/church/getchurches`,config);
@@ -41,8 +44,8 @@ const UserState = (props) => {
 
             console.log('resp data', responseData)
             dispatch({
-                type:SHOW_BRANCHES,
-               // payload:text
+                type:GET_CHURCH_BRANCHES,
+                payload:responseData
             })
         }catch(err){
             console.error('API Error', err)
@@ -51,6 +54,20 @@ const UserState = (props) => {
                 payload:"failed to load data"
             })
         }
+    }
+
+    //Dont touch this it is for styling purposes
+    const showBranch= async (text)=>{
+        dispatch({
+            type:SHOW_BRANCHES,
+            payload:text
+        })
+    }
+    const showSideBar = (text) =>{
+        dispatch({
+            type:SHOW_USER_SIDEBAR,
+            payload:text
+        })
     }
 
     const showPayment = (text)=>{
@@ -111,13 +128,16 @@ const UserState = (props) => {
             showBranches:state.showBranches,
             showPayments:state.showPayments,
             showModal:state.showModal,
+            showSideBarClass:state.showSideBarClass,
             isPaid:state.isPaid,
             events:state.events,
+            chruchBranches:state.chruchBranches,
             showBranch,
             showPayment,
             modal,
             registerPayment,
-            getEvents
+            getEvents,
+            showSideBar
         }}>
             {props.children}
         </userContext.Provider>

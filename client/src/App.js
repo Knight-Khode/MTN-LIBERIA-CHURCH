@@ -29,7 +29,7 @@ function App() {
               <Route exact path="/adminLogin" component={AdminLogin}/>
               <Route exact path="/otp" component={Otp}/>
               <Route exact path="/forgot" component={ForgotPassword}/>
-              <PrivateRoute2 exact path="/user" component={User}/>
+              <Route exact path="/user" component={User}/>
             </Switch>
           </Router>
         </UserState>

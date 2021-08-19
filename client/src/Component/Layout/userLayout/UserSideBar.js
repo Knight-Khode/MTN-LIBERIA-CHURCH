@@ -1,18 +1,11 @@
 import React,{useContext} from 'react'
-import { Link } from 'react-router-dom'
 import UserContext from '../../../context/user/userContext'
 import AuthContext from '../../../context/auth/authContext'
 
 const UserSideBar = () => {
     const userContext = useContext(UserContext)
     const authContext = useContext(AuthContext)
-    const {showBranch,showBranches,showPayment,showPayments} = userContext
-    const {logout} = authContext
-
-    const onLogout = (e)=>{
-        e.preventDefault()
-        logout()
-    }
+    const {showBranch,showBranches,showPayment,showPayments,showSideBar,showSideBarClass} = userContext
 
     const viewBranches = (e)=>{
         e.preventDefault()
@@ -33,10 +26,10 @@ const UserSideBar = () => {
     }
 
     return (
-        <div className="user-side-bar">
+        <div className={`user-side-bar ${showSideBarClass}`}>
            <div className="user-side-bar-header">
                 <div className="user-side-bar-header-content">
-                    <h4>Hello Kwame!</h4>
+                    <h4>Churches</h4>
                     <i class="fas fa-home"></i>
                 </div>
            </div>
@@ -44,21 +37,27 @@ const UserSideBar = () => {
                 <ul>
                     <li>
                         <i class="fas fa-church"></i>
-                        <a href="#" onClick={viewBranches}>Choose Branch</a>
+                        <a href="#">Church Name 1</a>
                     </li>
                     <li>
-                        <i class="fas fa-money-check-alt"></i>
-                        <a href="#" onClick={viewPayments}>Make Payment</a>
+                        <i class="fas fa-church"></i>
+                        <a href="#">Church Name 2</a>
                     </li>
                     <li>
-                        <i class="fas fa-home"></i>
-                        <Link className="userHome" to="/">
-                            <a href="#">Home</a>                           
-                        </Link>
+                        <i class="fas fa-church"></i>
+                        <a href="#">Church Name 3</a>                          
                     </li>
                     <li>
-                        <i class="fas fa-sign-out-alt"></i>
-                        <a href="#" onClick={onLogout}>Logout</a>
+                        <i class="fas fa-church"></i>
+                        <a href="#">Church Name 4</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-church"></i>
+                        <a href="#">Church Name 5</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-church"></i>
+                        <a href="#">Church Name 6</a>
                     </li>
                 </ul>
            </div>
