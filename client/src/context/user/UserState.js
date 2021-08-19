@@ -76,7 +76,7 @@ const UserState = (props) => {
 
         try{
             //api call to make payment via momo at backend
-            const res = await axios.post("route goes here",formData,config)
+            //const res = await axios.post("route goes here",formData,config)
             dispatch({
                 type:PAYMENT,
                 payload:formData

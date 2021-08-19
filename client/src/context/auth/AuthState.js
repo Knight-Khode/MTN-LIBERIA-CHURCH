@@ -42,7 +42,7 @@ const AuthState = (props) => {
                 }
             }
             //this sends a get request to grab single user detail imediately after they signup or login 
-            //const res = await fetch("route goes here",config)
+            const res = await fetch('',config)
             dispatch({
                 type:USER_LOADED,
                 payload:res.json()
@@ -66,7 +66,6 @@ const AuthState = (props) => {
         }
 
         try{
-            // const res = await axios.post("http://localhost:5000/api/auth/register",formData,config)
             const res = await fetch(`${baseUrl}/api/auth/register`,config);
             var responseData = await res.json();
 
@@ -77,6 +76,7 @@ const AuthState = (props) => {
             })
             //uncomment the code below when you are able to load logged in or signed up user data
             //loadUser()
+
         }catch(err){
             console.error('API Error', err)
             dispatch({
@@ -165,7 +165,7 @@ const AuthState = (props) => {
 
         try{
             //api call to recover password 
-            //const res = await fetch('api route goes here',config)
+            const res = await fetch(`${baseUrl}api​/Auth​/ForgotPassword`,config)
             dispatch({
                 type:SEND_RECOVERY_EMAIL
             })
