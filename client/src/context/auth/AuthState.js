@@ -42,10 +42,10 @@ const AuthState = (props) => {
                 }
             }
             //this sends a get request to grab single user detail imediately after they signup or login 
-            const res = await fetch('',config)
+            const res = await fetch('route goes here',config)
             dispatch({
                 type:USER_LOADED,
-                //payload:res.json()
+                payload:res.json()
             })
         }catch(error){
             //any error from the backend should be passed here
