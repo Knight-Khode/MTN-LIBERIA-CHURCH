@@ -6,6 +6,7 @@ import {
     LOGOUT_USER,
     SEND_OTP,
     SEND_OTP_FAIL,
+    USER_LOADED,
     SHOW_FORGOTTEN_PASSWORD,
     SEND_RECOVERY_EMAIL
 } from '../types'
@@ -57,6 +58,12 @@ export default (state,action)=>{
                 ...state,
                 ...action.payload,
                 recovery:true
+            }
+        case USER_LOADED:
+            return{
+                ...state,
+                ...action.payload,
+                user:action.payload
             }
         default:
             return state

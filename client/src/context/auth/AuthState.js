@@ -12,6 +12,7 @@ import {
     SEND_OTP_FAIL,
     SHOW_FORGOTTEN_PASSWORD,
     SEND_RECOVERY_EMAIL,
+    USER_LOADED,
     baseUrl
 }from '../types'
 
@@ -27,6 +28,29 @@ const AuthState = (props) => {
     }
 
     const [state,dispatch]=useReducer(authReducer,initialState)
+
+    //Load User (this function loads user details after they sign up or login)
+    const loadUser = async()=>{
+        try{
+            const config={
+                mode:'cors',
+                method:'GET',
+                cache:'no-cache',
+                headers:{
+                    'Authorization':'Access',
+                    'Content-Type' : 'application/json'
+                }
+            }
+            //this sends a get request to grab single user detail imediately after they signup or login 
+            //const res = await fetch("route goes here",config)
+            dispatch({
+                type:USER_LOADED,
+                payload:res.json()
+            })
+        }catch(error){
+            //any error from the backend should be passed here
+        }
+    }
 
     //Register User
     const register = async (formData)=>{
@@ -51,6 +75,8 @@ const AuthState = (props) => {
                 type:REGISTER_SUCCESS,
                 payload:formData
             })
+            //uncomment the code below when you are able to load logged in or signed up user data
+            //loadUser()
         }catch(err){
             console.error('API Error', err)
             dispatch({
@@ -83,6 +109,8 @@ const AuthState = (props) => {
                 type:LOGIN_SUCCESS,
                 payload:formData
             })
+            //uncomment the code below when you are able to load logged in or signed up user data
+            //loadUser()
         }catch(err){
             console.error('API Error', err)
             dispatch({
@@ -125,14 +153,19 @@ const AuthState = (props) => {
 
     const sendRecoveryEmail = async(email)=>{
         const config={
+            mode:'cors',
+            method:'POST',
+            cache:'no-cache',
             headers:{
-                'Content-Type':'application/json'
-            }
+                'Authorization':'Access',
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(email)
         }
 
         try{
             //api call to recover password 
-            const res = await axios.post('api route goes here',email,config)
+            //const res = await fetch('api route goes here',config)
             dispatch({
                 type:SEND_RECOVERY_EMAIL
             })
@@ -171,6 +204,7 @@ const AuthState = (props) => {
             logout,
             register,
             login,
+            loadUser,
             sendOtp,
             showModal,
             sendRecoveryEmail

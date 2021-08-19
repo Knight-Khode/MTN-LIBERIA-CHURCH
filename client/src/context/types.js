@@ -19,4 +19,5 @@ export const SEND_OTP = 'SEND_OTP'
 export const SEND_OTP_FAIL = 'SEND_OTP_FAIL'
 export const SHOW_FORGOTTEN_PASSWORD = 'SHOW_FORGOTTEN_PASSWORD'
 export const SEND_RECOVERY_EMAIL = "SEND_RECOVERY_EMAIL"
+export const USER_LOADED = "USER_LOADED"
 export const baseUrl = "http://localhost:5000"

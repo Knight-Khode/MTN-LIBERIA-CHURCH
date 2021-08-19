@@ -11,13 +11,13 @@ const Login = (props) => {
     
     useEffect(()=>{
         if(loggedIn){
-            props.history.push("otp")
+            props.history.push("/user")
         }
     },[loggedIn,props.history])
 
     const [user,setUser] = useState({
         username:'',
-        password:'',
+        password:''
     })
 
     const onClick=()=>{
