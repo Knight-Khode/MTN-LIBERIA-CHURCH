@@ -2,6 +2,7 @@ import React,{useContext} from 'react'
 import AuthContext from '../../../context/auth/authContext'
 import UserContext from '../../../context/user/userContext'
 import { Link } from 'react-router-dom'
+import { Link as Link2 } from 'react-scroll'
 import logo from '../../../img/logo.jpeg'
 import '../../../user.css'
 
@@ -48,9 +49,12 @@ const UserNavbar = () => {
                         <button className="dropbtn">View
                         </button>
                         <div className="dropdown-content">
-                            <a href="#church" onClick={church}>Churches</a>
-                            <a href="#payment" onClick={payment}>Payments</a>
-                            <a href="#" onClick={onLogout}>Daily Verse</a>
+                            <Link2 to ="church" spy={true} smooth={true}>
+                                <a href="#church" onClick={church}>Churches</a>
+                            </Link2>
+                            <Link2 to ="payment" spy={true} smooth={true}>
+                                <a href="#payment" onClick={payment}>Payments</a>
+                            </Link2>
                             <a href="#" onClick={onLogout}>Logout</a>
                         </div>
                     </div>

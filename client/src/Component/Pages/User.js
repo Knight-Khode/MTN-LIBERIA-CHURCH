@@ -15,7 +15,7 @@ const User = () => {
             <div className="userbody">
                 <div className="userbody-flex">
                     <UserSideBar/>
-                   <div className="body-flex">
+                   <div className="body-flex" id="payment">
                         <UserVideo/>
                         <UserQuotation/>
                         <UserPayment/>

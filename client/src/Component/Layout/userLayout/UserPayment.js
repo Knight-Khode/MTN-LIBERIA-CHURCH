@@ -13,7 +13,7 @@ const UserPayment = () => {
     }
     
     return (
-        <div className={`user-payment ${showPayments}`}>
+        <div className={`user-payment ${showPayments}`} id="payment">
             <div className="user-payment-header">
                 <div className="user-payment-header-content">
                     <h4>Payments</h4>
