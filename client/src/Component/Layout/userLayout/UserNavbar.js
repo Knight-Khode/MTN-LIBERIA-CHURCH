@@ -2,14 +2,24 @@ import React,{useContext} from 'react'
 import AuthContext from '../../../context/auth/authContext'
 import UserContext from '../../../context/user/userContext'
 import { Link } from 'react-router-dom'
+import { Link as Link2 } from 'react-scroll'
 import logo from '../../../img/logo.jpeg'
 import '../../../user.css'
 
 const UserNavbar = () => {
     const authContext = useContext(AuthContext)
     const userContext = useContext(UserContext)
-    const {showSideBar,showSideBarClass} = userContext
+    const {showSideBar,showSideBarClass,showPayment,showPayments} = userContext
     const {logout} = authContext
+
+    const payment = (e) =>{
+        e.preventDefault()
+        if(showPayments==="hide2"){
+            showPayment("show2")
+        }else{
+            showPayment("hide2")
+        }
+    }
 
     const church = (e)=>{
         e.preventDefault()
@@ -39,8 +49,12 @@ const UserNavbar = () => {
                         <button className="dropbtn">View
                         </button>
                         <div className="dropdown-content">
-                            <a href="#church" onClick={church}>Churches</a>
-                            <a href="#payment">Payments</a>
+                            <Link2 to ="church" spy={true} smooth={true}>
+                                <a href="#church" onClick={church}>Churches</a>
+                            </Link2>
+                            <Link2 to ="payment" spy={true} smooth={true}>
+                                <a href="#payment" onClick={payment}>Payments</a>
+                            </Link2>
                             <a href="#" onClick={onLogout}>Logout</a>
                         </div>
                     </div>

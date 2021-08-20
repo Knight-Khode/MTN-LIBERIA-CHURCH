@@ -6,7 +6,9 @@ import {
     VIEW_USERS,
     ADMIN_LOGIN_FAIL,
     ADMIN_LOGIN_SUCCESS,
-    LOGOUT
+    ADD_EVENTS_FAIL,
+    LOGOUT,
+    baseUrl
 } from '../types'
 
 const AdminState = (props) => {
@@ -34,7 +36,7 @@ const AdminState = (props) => {
         })
     }
 
-     //Login User
+     //Login Admin
      const adminLogin = async (formData)=>{
         const config={
             headers:{
@@ -49,8 +51,6 @@ const AdminState = (props) => {
             dispatch({
                 type:ADMIN_LOGIN_SUCCESS
             })
-
-            //loadUser()
             
         }catch(err){
             dispatch({
@@ -61,7 +61,38 @@ const AdminState = (props) => {
         }
     }
 
-    //Logout User
+    //add events
+    const addEvents = async (newEvent)=>{
+        console.log(newEvent)
+        const config={
+            mode:'cors',
+            method:'POST',
+            cache:'no-cache',
+            headers:{
+                'Authorization':'Access',
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(newEvent)
+        }
+
+        try{
+            // const res = await axios.post("http://localhost:5000/api/auth/register",formData,config)
+            const res = await fetch(`${baseUrl}/api/auth/AddUpcomingEvent`,config);
+            var responseData = await res.json();
+
+            console.log('resp data', responseData)
+        }catch(err){
+            console.error('API Error', err)
+            dispatch({
+                type:ADD_EVENTS_FAIL,
+                payload://Error message from backend just incase an input field was empty
+                //for now we are hard coding an error:
+                "Check all your input fields"
+            })
+        }
+    }
+
+    //Logout Admin
     const logout = ()=>{
         dispatch({
             type:LOGOUT
@@ -77,7 +108,8 @@ const AdminState = (props) => {
             changeClass,
             changeClass2,
             adminLogin,
-            logout
+            logout,
+            addEvents
         }}>
             {props.children}
         </adminContext.Provider>

@@ -10,11 +10,11 @@ const AdminBody = () => {
         <div className="adminBody">
             <StatBox/>
             <div className="events-stat-flex">
-                <Chart/>
-                <Events/>
+                <Chart id="chart"/>
+                <Events id="events"/>
             </div>
-           <Payment/>
-           <Users/>
+           <Payment id="payment"/>
+           <Users id="users"/>
         </div>
     )
 }
