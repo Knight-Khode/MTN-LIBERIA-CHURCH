@@ -8,8 +8,17 @@ import '../../../user.css'
 const UserNavbar = () => {
     const authContext = useContext(AuthContext)
     const userContext = useContext(UserContext)
-    const {showSideBar,showSideBarClass} = userContext
+    const {showSideBar,showSideBarClass,showPayment,showPayments} = userContext
     const {logout} = authContext
+
+    const payment = (e) =>{
+        e.preventDefault()
+        if(showPayments==="hide2"){
+            showPayment("show2")
+        }else{
+            showPayment("hide2")
+        }
+    }
 
     const church = (e)=>{
         e.preventDefault()
@@ -40,7 +49,8 @@ const UserNavbar = () => {
                         </button>
                         <div className="dropdown-content">
                             <a href="#church" onClick={church}>Churches</a>
-                            <a href="#payment">Payments</a>
+                            <a href="#payment" onClick={payment}>Payments</a>
+                            <a href="#" onClick={onLogout}>Daily Verse</a>
                             <a href="#" onClick={onLogout}>Logout</a>
                         </div>
                     </div>

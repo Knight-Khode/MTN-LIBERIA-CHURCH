@@ -2,7 +2,6 @@ import React from 'react'
 import UserNavbar from '../Layout/userLayout/UserNavbar'
 import UserShowcase from '../Layout/userLayout/UserShowcase'
 import UserSideBar from '../Layout/userLayout/UserSideBar'
-import Branches from '../Layout/userLayout/Branches'
 import UserPayment from '../Layout/userLayout/UserPayment'
 import PaymentModal from '../Layout/userLayout/PaymentModal'
 import UserQuotation from '../Layout/userLayout/UserQuotation'
@@ -17,11 +16,10 @@ const User = () => {
                 <div className="userbody-flex">
                     <UserSideBar/>
                    <div className="body-flex">
-                    <UserVideo/>
-                    <UserQuotation/>
-                    <Branches/>
-                    <UserPayment/>
-                    <PaymentModal/>
+                        <UserVideo/>
+                        <UserQuotation/>
+                        <UserPayment/>
+                        <PaymentModal/>
                    </div>
                 </div>
             </div>

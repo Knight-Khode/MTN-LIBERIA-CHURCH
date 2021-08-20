@@ -3,6 +3,8 @@ import {
     VIEW_USERS,
     ADMIN_LOGIN_FAIL,
     ADMIN_LOGIN_SUCCESS,
+    ADD_EVENTS,
+    ADD_EVENTS_FAIL,
     LOGOUT
 } from '../types'
 
@@ -30,6 +32,12 @@ export default (state,action)=>{
             return{
                 ...state,
                 isAuthenticated2:false,
+                error:action.payload
+            }
+        case ADD_EVENTS_FAIL:
+            return{
+                ...state,
+                ...action.payload,
                 error:action.payload
             }
         default:

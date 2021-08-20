@@ -22,4 +22,5 @@ export const SHOW_FORGOTTEN_PASSWORD = 'SHOW_FORGOTTEN_PASSWORD'
 export const SEND_RECOVERY_EMAIL = "SEND_RECOVERY_EMAIL"
 export const USER_LOADED = "USER_LOADED"
 export const SHOW_USER_SIDEBAR= "SHOW_USER_SIDEBAR"
+export const ADD_EVENTS_FAIL = "ADD_EVENTS_FAIL"
 export const baseUrl = "http://localhost:5000"  

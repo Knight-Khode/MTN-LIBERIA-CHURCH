@@ -137,7 +137,8 @@ const UserState = (props) => {
             modal,
             registerPayment,
             getEvents,
-            showSideBar
+            showSideBar,
+            getChurchBranch
         }}>
             {props.children}
         </userContext.Provider>
